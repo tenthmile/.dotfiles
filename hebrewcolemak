@@ -1,0 +1,61 @@
+/////////////////////////////////////////////////////////////////////////////////
+//
+// Generated keyboard layout file with the Keyboard Layout Editor.
+// For more about the software, see http://code.google.com/p/keyboardlayouteditor
+//
+
+xkb_symbols "hebrewcolemak"
+{
+	name[Group1] = "Hebrew (Colemak)";
+	include "level3(ralt_switch)"
+	include "us(basic)"
+	key <AB01> { [    hebrew_zadi, hebrew_finalzadi,   hebrew_zayin,             AE ] }; // צ ץ ז Æ 
+	key <AB02> { [    hebrew_shin,              X, dead_circumflex,     asciitilde ] }; // ש X D^ ~ 
+	key <AB03> { [     hebrew_het,              C,    hebrew_kaph, hebrew_finalkaph ] }; // ח C כ ך 
+	key <AB04> { [     hebrew_waw,              V,    hebrew_beth,             OE ] }; // ו V ב Œ 
+	key <AB05> { [    hebrew_beth,              B,     dead_breve,     asciitilde ] }; // ב B D˘ ~ 
+	key <AB06> { [    hebrew_kaph, hebrew_finalkaph,    hebrew_qoph,     asciitilde ] }; // כ ך ק ~ 
+	key <AB07> { [     hebrew_mem, hebrew_finalmem,    dead_macron,     asciitilde ] }; // מ ם Dˉ ~ 
+	key <AB08> { [          comma,           less,   dead_cedilla,     asciitilde ] }; // , < D¸ ~ 
+	key <AB09> { [         period,        greater,  dead_abovedot,     asciitilde ] }; // . > D˙ ~ 
+	key <AB10> { [          slash,       question,   questiondown,     asciitilde ] }; // / ? ¿ ~ 
+	key <AC01> { [   hebrew_aleph,              A,    hebrew_ayin,         Aacute ] }; // א A ע Á 
+	key <AC02> { [    hebrew_resh,              R,     dead_grave,     asciitilde ] }; // ר R D` ~ 
+	key <AC03> { [  hebrew_samekh,   hebrew_zayin,    hebrew_shin,   hebrew_zayin ] }; // ס ז ש ז 
+	key <AC04> { [     hebrew_taw,              T,    hebrew_teth, dead_doubleacute ] }; // ת T ט D˝ 
+	key <AC05> { [  hebrew_daleth,              D, dead_diaeresis,     asciitilde ] }; // ד D D¨ ~ 
+	key <AC06> { [      hebrew_he,              H,     dead_caron,     asciitilde ] }; // ה H Dˇ ~ 
+	key <AC07> { [     hebrew_nun, hebrew_finalnun,         ntilde,         Ntilde ] }; // נ ן ñ Ñ 
+	key <AC08> { [   hebrew_aleph,              E,         eacute,         Eacute ] }; // א E é É 
+	key <AC09> { [     hebrew_yod,              I,   hebrew_aleph,         Iacute ] }; // י I א Í 
+	key <AC10> { [     hebrew_waw,              O,   hebrew_aleph,         Oacute ] }; // ו O א Ó 
+	key <AC11> { [     apostrophe,       quotedbl,         otilde,         Otilde ] }; // ' " õ Õ 
+	key <AD01> { [    hebrew_qoph,              Q,     adiaeresis,     Adiaeresis ] }; // ק Q ä Ä 
+	key <AD02> { [     hebrew_waw,              W,    hebrew_beth,          Aring ] }; // ו W ב Å 
+	key <AD03> { [      hebrew_pe, hebrew_finalpe,         atilde,         Atilde ] }; // פ ף ã Ã 
+	key <AD04> { [      hebrew_pe, hebrew_finalpe,         oslash,       Ooblique ] }; // פ ף ø Ø 
+	key <AD05> { [  hebrew_gimmel,              G,    dead_ogonek,     asciitilde ] }; // ג G D˛ ~ 
+	key <AD06> { [     hebrew_yod,              J,   hebrew_aleph,        Dstroke ] }; // י J א Đ 
+	key <AD07> { [   hebrew_lamed,              L,        lstroke,        Lstroke ] }; // ל L ł Ł 
+	key <AD08> { [     hebrew_waw,              U,   hebrew_aleph,       NoSymbol ] }; // ו U א  
+	key <AD09> { [    hebrew_ayin,     hebrew_yod,   hebrew_aleph,     hebrew_yod ] }; // ע י א י 
+	key <AD10> { [      semicolon,          colon,     odiaeresis,     Odiaeresis ] }; // ; : ö Ö 
+	key <AD11> { [    bracketleft,      braceleft,  guillemotleft,      0x1002039 ] }; // [ { « ‹ 
+	key <AD12> { [   bracketright,     braceright, guillemotright,      0x100203a ] }; // ] } » › 
+	key <AE01> { [           KP_1,         exclam,     exclamdown,    onesuperior ] }; // 1 ! ¡ ¹ 
+	key <AE02> { [           KP_2,             at,      masculine,    twosuperior ] }; // 2 @ º ² 
+	key <AE03> { [           KP_3,     numbersign,    ordfeminine,  threesuperior ] }; // 3 # ª ³ 
+	key <AE04> { [           KP_4,         dollar,           cent,       sterling ] }; // 4 $ ¢ £ 
+	key <AE05> { [           KP_5,        percent,       EuroSign,            yen ] }; // 5 % € ¥ 
+	key <AE06> { [           KP_6,    asciicircum,        hstroke,        Hstroke ] }; // 6 ^ ħ Ħ 
+	key <AE07> { [           KP_7,      ampersand,            eth,            ETH ] }; // 7 & ð Ð 
+	key <AE08> { [           KP_8,       asterisk,          thorn,          THORN ] }; // 8 * þ Þ 
+	key <AE09> { [           KP_9,      parenleft, leftsinglequotemark, leftdoublequotemark ] }; // 9 ( ‘ “ 
+	key <AE10> { [           KP_0,     parenright, rightsinglequotemark, rightdoublequotemark ] }; // 0 ) ’ ” 
+	key <AE11> { [          minus,     underscore,         endash,         emdash ] }; // - _ – — 
+	key <AE12> { [          equal,           plus,       multiply,       division ] }; // = + × ÷ 
+	key <BKSL> { [      backslash,            bar,     asciitilde,     asciitilde ] }; // \ | ~ ~ 
+	key <LSGT> { [          minus,     underscore,         endash,         emdash ] }; // - _ – — 
+	key <TLDE> { [          grave,     asciitilde,     dead_tilde,     asciitilde ] }; // ` ~ D~ ~ 
+};
+
