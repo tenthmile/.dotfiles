@@ -1,0 +1,385 @@
+Pre:
+pacman -S dosfstools efibootmgr
+pacman -S gummiboot
+
+Pacman:
+sudo                             (requires configuration)
+nvidia lib32-nvidia-libgl / bumblebee + lib32-versionen. siehe wiki (lib32-nvidia-libgl darf NICHT installiert sein)
+nvidia-settings
+xf86-input-synaptics (Laptop Touchpad. Siehe Frequently used options)
+lightdm                          (requires configuration)
+lightdm-gtk-greeter
+awesome
+sakura
+archey3	                         (requires configuration .bashrc .zshrc)
+emacs    (emacs-xwidget from AUR)
+firefox firefox-i18n-de
+thunderbird thunderbird-i18n-de
+ttf-dejavu
+ttf-ubuntu-font-family
+ttf-liberation
+ttf-bitstream-vera
+ttf-inconsolata
+ttf-freefont
+ttf-linux-libertine
+adobe-source-code-pro-fonts
+ttf-tibetan-machine              (for "giff" emoticon)
+udisks2
+parted gptfdisk ntfs-3g exfat-utils dosfstools
+alsa-utils lib32-alsa-plugins
+ntp                              (maybe requires configuration)
+numlockx
+samba
+cups gutenprint ghostscript      (requires configuration)
+brasero devede
+asunder vorbis-tools             (rip audio cds)
+xsane
+gimp
+vlc
+pulseaudio pavucontrol pulseaudio-alsa (and "paprefs" for multi-soundcard output <- requires configuration)
+xarchiver or file-roller (+ unrar +p7zip pigz)
+gpicview
+gst-libav gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly
+pcmanfm (+ gvfs gvfs-mtp gvfs-smb)    # so können wir auch mit SSHelper über sftp Daten syncen.
+openssh                          (requires configuration)
+scrot
+quodlibet (music player for BIG libraries) (+ python2-pyinotify enable Automatic Library Update. Browse Files. Tray Icon)
+clementine (as an quod libet alternative (if cross platform is prefered.) however, it is slower and has more bugs)
+transmission-gtk
+bluez bluez-utils
+blueman
+bluez-plugins (Playstation Controller. To connect, connect via USB and it remembers it.)
+vulkan-icd-loader
+htop
+zsh                              (requires configuration)
+tmux           # C-b [    for text selection. C-b ]     to paste copied text
+powerline-fonts
+gucharmap (search/pick through fonts)
+parcellite                  (alternative: clipit)
+networkmanager # replace dhcpcd
+dhclient # use in conjunction with networkmanager (supports ipv6/solves eduroam problems (uni wlan))
+network-manager-applet # (tray icon for wlan & uni vpn)
+networkmanager-openconnect # way better then cisco connect from the uni website
+ffmpeg
+obs-studio                  (maybe "obs-studio-git" is needed for mixer.com streaming)
+avidemux-qt
+
+privoxy (webpage filter)         (requires configuration)
+xorg-xinput (xinput set-prop 14 --type=float "Coordinate Transformation Matrix" 0.392 0 0.215 0 0.642857 0 0 0 1) (graphic tablet)
+xorg-xev    (reading keys)
+xorg-xmodmap (mapping keys (alternative to complex xkbcomp))
+xorg-xrdb (load Xresources file)
+inkscape
+xournal (or any other  note-taking journal sketching handwriting tablet-pc handwritten-notes software)
+
+skype
+teamspeak3
+
+vmpk (/etc/conf.d/fluidsynth:
+      AUDIO_DRIVER=pulseaudio
+      OTHER_OPTS='-m alsa_seq -r 48000'  systemctl --user start fluidsynth.service)
+soundfont-fluid
+fluidsynth
+
+libreoffice-still libreoffice-still-de
+hunspell hunspell-en hunspell-de (for spelling in emacs and libreoffice)
+languagetool (for grammar checking in emacs and libreoffice (maybe install after openjdk))
+auctex
+texlive-science (for "kvmacros")
+texlive-latexextra (for "exam" documentclass)
+texlive-bibtexextra (for "biblatex")
+texlive-humanities (for "verse" and "bibleref")
+biber
+gnuplot
+kdegraphics-okular
+plasma-desktop (for minimal kde (currently not installed))
+
+gdb
+hexedit
+git
+clang clang-analyze22r clang-tools-extra lib32-clang
+cmake
+boost
+jdk8-openjdk
+wmname     (fix bug with awesome wm and java. (Shifted JMenuItems? Fix it with: wmname Sawfish))
+mono (mono-addins ???)
+intellij-idea-community-edition (or ultimate (aur) + clion (aur) (+ biicode (aur)) + rider (aur))
+vulkan-devel
+figlet (artist-mode text rendering emacs)
+ghc (cabal-install)
+antlr4
+
+
+avr-gcc                          (for ergodox teensy development)
+avr-libc			 (for ergodox teensy development)
+avr-binutils                     (for ergodox teensy development)
+dfu-util                         (for ergodox teensy development)
+arm-none-eabi-binutils           (for ergodox teensy development)
+arm-none-eabi-gcc                (for ergodox teensy development)
+arm-none-eabi-newlib             (for ergodox teensy development)
+
+
+
+gnome-themes-standard		 (requires configuration see "Theme Stuff")
+mate-themes                      (requires configuration see "Theme Stuff")
+lxappearance			 (requires configuration see "Theme Stuff")
+
+dolphin-emu
+mupen64plus  (bzw retroarch)
+higan  (bzw retroarch)
+wine winetricks
+playonlinux
+steam
+livestreamer
+retroarch
+libretro-nestopia
+libretro-bsnes
+libretro-mupen64plus
+libretro-gambatte
+libretro-mgba
+libretro-desmume
+
+
+perl-file-mimeinfo  (xdg-mime query filetype ~/test.pdf     mimeopen -d ~/test.pdf     xdg-mime default application.desktop mime/type)
+espeak
+flashplugin lib32-flashplugin
+
+# cpu temperature
+thermald
+cpupower
+lm_sensors xsensors
+
+virtualbox virtualbox-host-modules-arch
+
+???
+Wine 32Bit Audio?!
+lib32-openal
+lib32-mpg123
+
+
+Temporär:
+   Seminar Elektronische Musik:
+      pd(-extended) tcl tk
+      jack2-dbus pulseaudio-jack
+      cadence (aur)
+
+
+Laptop:
+#cbattticon (Battery Tray)
+rfkill (to enable/disable bluetooth/wlan)
+xorg-xbacklight
+(Usb Internet surfstick:
+usbutils usb_modeswitch modemmanager (für NetworkManager)
+mobile-broadband-provider-info nm-connection-editor
+modem-manager-gui
+)
+arandr (easier xrandr)
+
+AUR:
+pacaur
+multiload-ng(-indicator-gtk3)
+(qpdfview) (we already got okular)
+cloudstation / cloudstationdrive / synology-cloud-station-drive (jenachdem welches gerade in der aur ist.)
+rtags-git (emacs c++ indexing and such)
+cups-bjnp (enable network printing for some canon printers)
+(cnijfilter-mp640) (maybe we can do it with just the bjnp)
+projectlibre (SOPRA, alternative to Microsoft Project)
+steamos-xpad-dkms (fix bug with xbox controller. Requires dkms installed AND RUNNING)
+downgrader
+chromium-widevine (damit man mit chromium Amazon Prime Video/Amazon Instant Video schauen kann. chrome://plugins)
+awesome-freedesktop-git
+
+libretro-mame-git (mame)
+
+doomseeker zandronum2 (doom)
+
+otf-ipafont ttf-amiri ttf-ancient-fonts ttf-ms-fonts ttf-monaco ttf-vista-fonts
+ttf-emojione-color
+
+minted (for colored listings in latex from org-mode export requires configuration in emacs)
+
+teensyduino                      (for ergodox teensy development. it adds a udev rule so that we can use the teensy loader)
+dfu-programmer                   (for ergodox teensy development)
+
+Manual:
+PlatUML (http://plantuml.com/) (UML Modeling Tool with Text)
+https://github.com/gentakojima/emojione-picker-ubuntu   (benötigt libappindicator-gtk3)
+Signal Chromium Web App
+
+Important Settings:
+/usr/share/wine/wine.inf (at the [Services] section)
+Change:
+HKLM,%CurrentVersion%\RunServices,"winemenubuilder",2,"%11%\winemenubuilder.exe -a -r"
+to (This will prevent wine from stealing your preferred mimeapps, but the winemenubuilder will still run and create convenient desktop entries for your Windoze software.):
+HKLM,%CurrentVersion%\RunServices,"winemenubuilder",2,"%11%\winemenubuilder.exe -r"
+or (this gives the finger to wine mimeapps):
+HKLM,%CurrentVersion%\RunServices,"winemenubuilder",2,"%11%\winemenubuilder.exe"
+
+(remove existing mime stuff)
+edit and remove wine mime entries ~/.local/share/applications/mimeinfo.cache
+rm -f ~/.local/share/mime/packages/x-wine*
+rm -f ~/.local/share/applications/wine-extension*
+rm -f ~/.local/share/icons/hicolor/*/*/application-x-wine-extension*
+rm -f ~/.local/share/mime/application/x-wine-extension*
+
+
+sudo xboxdrv -D -d --mimic-xpad --trigger-as-button --next-controller --mimic-xpad --trigger-as-button
+wine control (Game Controller. Disable all but one required)
+
+
+/etc/polkit-1/rules.d/50-udisks.rules:
+polkit.addRule(function(action, subject) {
+  var YES = polkit.Result.YES;
+  var permission = {
+    // only required for udisks1:
+    "org.freedesktop.udisks.filesystem-mount": YES,
+    "org.freedesktop.udisks.filesystem-mount-system-internal": YES,
+    "org.freedesktop.udisks.luks-unlock": YES,
+    "org.freedesktop.udisks.drive-eject": YES,
+    "org.freedesktop.udisks.drive-detach": YES,
+    // only required for udisks2:
+    "org.freedesktop.udisks2.filesystem-mount": YES,
+    "org.freedesktop.udisks2.filesystem-mount-system": YES,
+    "org.freedesktop.udisks2.encrypted-unlock": YES,
+    "org.freedesktop.udisks2.eject-media": YES,
+    "org.freedesktop.udisks2.power-off-drive": YES,
+    // required for udisks2 if using udiskie from another seat (e.g. systemd):
+    "org.freedesktop.udisks2.filesystem-mount-other-seat": YES,
+    "org.freedesktop.udisks2.encrypted-unlock-other-seat": YES,
+    "org.freedesktop.udisks2.eject-media-other-seat": YES,
+    "org.freedesktop.udisks2.power-off-drive-other-seat": YES
+  };
+  if (subject.isInGroup("storage")) {
+    return permission[action.id];
+  }
+});
+
+
+/etc/sysctl.d/99-sysctl.conf : (to enable alt+print+r/e/i/s/u/b):
+kernel.sysrq = 1
+
+/etc/sysctl.d/99-sysctl.conf : (#to disable ipv6)
+net.ipv6.conf.all.disable_ipv6=1
+
+
+/etc/hosts : (falls noch helm/tramp emacs arch linux t-online bug existiert)
+127.0.0.1       host.does.not.exist
+
+
+/etc/X11/xorg.conf.d/50-mouse-acceleration.conf : (do disable mouse acceleration)
+Section "InputClass"
+	Identifier "My Mouse"
+	MatchIsPointer "yes"
+	Option "AccelerationProfile" "-1"
+	Option "AccelerationScheme" "none"
+	Option "AccelSpeed" "-1"
+EndSection
+
+
+(Steam controller linux fix, now in the steam package)
+
+
+/etc/environment:
+EDITOR=emacs -nw
+
+/etc/makepkg.conf:
+#https://wiki.archlinux.org/index.php/makepkg
+MAKEFLAGS="-j17"
+COMPRESSXZ=(xz -c -z - --threads=0)
+#pigz is a drop-in, parallel implementation for gzip which by default uses all available CPU cores
+COMPRESSGZ=(pigz -c -f -n)
+
+
+
+~/.config/fontconfig/conf.d/01-emoji.conf (Emoji Font Override):
+<?xml version='1.0'?>
+<!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
+<fontconfig>
+  <!-- Emoji config -->
+  <alias>
+    <family>Apple Color Emoji</family>
+    <prefer><family>emoji</family></prefer>
+  </alias>
+  <alias>
+    <family>Segoe UI Emoji</family>
+    <prefer><family>emoji</family></prefer>
+  </alias>
+  <alias>
+    <family>Segoe UI Symbol</family>
+    <prefer><family>emoji</family></prefer>
+  </alias>
+  <alias>
+    <family>Noto Emoji</family>
+    <prefer><family>emoji</family></prefer>
+  </alias>
+  <alias>
+    <family>Noto Color Emoji</family>
+    <prefer><family>emoji</family></prefer>
+  </alias>
+  <alias>
+    <family>Symbola</family>
+    <prefer><family>emoji</family></prefer>
+  </alias>
+  <alias>
+    <family>Android Emoji</family>
+    <prefer><family>emoji</family></prefer>
+  </alias>
+  <alias>
+    <family>EmojiSymbols</family>
+    <prefer><family>emoji</family></prefer>
+  </alias>
+</fontconfig>
+
+
+
+LibreOffice A4 Paper:
+Format>Page...>Page>Format: A4.
+File>Templates>Save As Template
+My Templates
+Save
+File>New>Templates
+My Templates
+Set as Default
+
+
+
+cabal:
+cabal update
+cabal install happy
+cabal install hlint    ????
+cabal install ghc-mod
+cabal install hoogle
+~/.cabal/bin/hoogle data
+
+
+shell-alias (.bashrc or .zshrc):
+alias ec="emacs -Q -nw -f full-calc"
+
+
+Theme Stuff:
+(Note: QGtkStyle will be removed from qt5-base 5.7 [1]. and added to qt5-qtstylepluginsAUR as name gtk2 [2])
+Set QT4 Theme to GTK: qtconfig-qt4 > GTK+
+Set QT5 Theme to GTK: export QT_STYLE_OVERRIDE=GTK+     (in ~/.xinitrc)
+I like the theme "BlueMenta". maybe install cantarell-fonts
+
+
+Prevent Teamspeak/Skype/... from muting music players: (comment the module module-role-cork in /etc/pulse/default.pa)
+#load-module module-role-cork
+
+Some Audio Devices have no sound below a certain value. e.g. USB-Headset no sound below 25%
+Add the "ignore_dB=1" in the "load-module module-udev-detect" from /etc/pulse/default.pa
+load-module module-udev-detect ignore_dB=1
+
+then in /etc/pulse/daemon.conf:
+flat-volumes = no
+
+
+Backup:
+.config/awesome/*
+.emacs
+.XCompose
+.xprofile
+.Xresources    (für textrendering. kein subpixel rendering (= Xft.rgba: rgb), da ich colour fringing hasse. Falls doch, verwende Xft.lcdfilter: lcddefault oder FT_LCD_FILTER_LIGHT (?richtiger name?))
+
+Laptop:
+ggf. blacklist ideapad_laptop
