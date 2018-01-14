@@ -1,2 +1,3 @@
 File>Settings>Editor>General>Virtual Space>☑ Show virtual space at file bottom
 File>Settings>Editor>General>Typing Assistance>Miscellaneous>Surround selection on typing quote or brace       or   File>Settings>Editor>Smart Keys>Surround selection on typing quote or brace
+File>Settings>Editor>TODO> + "(?<=\W|^)(?<TAG>TODO)(\W|$)(.*)"
