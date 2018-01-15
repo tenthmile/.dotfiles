@@ -6,6 +6,7 @@ pacman -S gummiboot
 sudo                             (requires configuration)
 nvidia lib32-nvidia-libgl / bumblebee + lib32-versionen. siehe wiki (lib32-nvidia-libgl darf NICHT installiert sein)
 nvidia-settings
+mesa-demos
 xf86-input-synaptics (Laptop Touchpad. Siehe Frequently used options)
 lightdm                          (requires configuration)
 lightdm-gtk-greeter
@@ -13,6 +14,8 @@ awesome
 sakura
 archey3	                         (requires configuration .bashrc .zshrc)
 emacs    (emacs-xwidget from AUR)
+wget
+xdg-user-dirs
 firefox firefox-i18n-de
 thunderbird thunderbird-i18n-de
 ttf-dejavu
@@ -121,8 +124,7 @@ lxappearance			 (requires configuration see "Theme Stuff")
 dolphin-emu
 mupen64plus  (bzw retroarch)
 higan  (bzw retroarch)
-wine winetricks
-playonlinux
+wine winetricks (lutris)
 steam
 retroarch
 libretro-nestopia
