@@ -1,8 +1,8 @@
-Pre:
+# Pre
 pacman -S dosfstools efibootmgr
 pacman -S gummiboot
 
-Pacman:
+# required on default instalation
 sudo                             (requires configuration)
 nvidia lib32-nvidia-libgl / bumblebee + lib32-versionen. siehe wiki (lib32-nvidia-libgl darf NICHT installiert sein)
 nvidia-settings
@@ -75,12 +75,6 @@ xournal (or any other  note-taking journal sketching handwriting tablet-pc handw
 skype
 teamspeak3
 
-vmpk (/etc/conf.d/fluidsynth:
-      AUDIO_DRIVER=pulseaudio
-      OTHER_OPTS='-m alsa_seq -r 48000'  systemctl --user start fluidsynth.service)
-soundfont-fluid
-fluidsynth
-
 libreoffice-still libreoffice-still-de
 hunspell hunspell-en hunspell-de (for spelling in emacs and libreoffice)
 languagetool (for grammar checking in emacs and libreoffice (maybe install after openjdk))
@@ -109,14 +103,14 @@ figlet (artist-mode text rendering emacs)
 ghc (cabal-install)
 antlr4
 
-
-avr-gcc                          (for ergodox teensy development)
-avr-libc			 (for ergodox teensy development)
-avr-binutils                     (for ergodox teensy development)
-dfu-util                         (for ergodox teensy development)
-arm-none-eabi-binutils           (for ergodox teensy development)
-arm-none-eabi-gcc                (for ergodox teensy development)
-arm-none-eabi-newlib             (for ergodox teensy development)
+# ergodox teensy development:
+avr-gcc
+avr-libc
+avr-binutils
+dfu-util
+arm-none-eabi-binutils
+arm-none-eabi-gcc
+arm-none-eabi-newlib
 
 
 
@@ -130,10 +124,9 @@ higan  (bzw retroarch)
 wine winetricks
 playonlinux
 steam
-livestreamer
 retroarch
 libretro-nestopia
-libretro-bsnes
+libretro-bsnes    # soon to be replaced by libretro-higan
 libretro-mupen64plus
 libretro-gambatte
 libretro-mgba
@@ -144,28 +137,30 @@ perl-file-mimeinfo  (xdg-mime query filetype ~/test.pdf     mimeopen -d ~/test.p
 espeak
 flashplugin lib32-flashplugin
 
-# cpu temperature
+# cpu temperature:
 thermald
 cpupower
 lm_sensors xsensors
 
+# Virtualization: (UEFI: Enable AMD-v extensions or Intel VT)
 virtualbox virtualbox-host-modules-arch
 
-???
-Wine 32Bit Audio?!
+# Wine 32Bit Audio?!
 lib32-openal
 lib32-mpg123
 
+# Music:
+vmpk (/etc/conf.d/fluidsynth:
+      AUDIO_DRIVER=pulseaudio
+      OTHER_OPTS='-m alsa_seq -r 48000'  systemctl --user start fluidsynth.service)
+soundfont-fluid
+fluidsynth
 
-Temporär:
-   Seminar Elektronische Musik:
-      pd(-extended) tcl tk
-      jack2-dbus pulseaudio-jack
-      cadence (aur)
+pd(-extended) tcl tk jack2-dbus pulseaudio-jack
+cadence (aur)
 
-
-Laptop:
-#cbattticon (Battery Tray)
+# Laptop:
+cbattticon (Battery Tray)
 rfkill (to enable/disable bluetooth/wlan)
 xorg-xbacklight
 (Usb Internet surfstick:
