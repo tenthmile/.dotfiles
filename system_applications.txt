@@ -172,7 +172,7 @@ arandr (easier xrandr)
 
 AUR:
 pacaur
-multiload-ng(-indicator-gtk3)
+multiload-ng(-systray-gtk3)
 (qpdfview) (we already got okular)
 cloudstation / cloudstationdrive / synology-cloud-station-drive (jenachdem welches gerade in der aur ist.)
 rtags-git (emacs c++ indexing and such)
@@ -198,7 +198,7 @@ dfu-programmer                   (for ergodox teensy development)
 
 Manual:
 PlatUML (http://plantuml.com/) (UML Modeling Tool with Text)
-https://github.com/gentakojima/emojione-picker-ubuntu   (benötigt libappindicator-gtk3)
+https://github.com/gentakojima/emojione-picker-ubuntu   (benötigt libappindicator-gtk3 python2-gobject)
 Signal Chromium Web App
 
 Important Settings:
