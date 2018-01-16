@@ -12,8 +12,8 @@ lightdm                          (requires configuration)
 lightdm-gtk-greeter
 awesome
 sakura
+emacs    (emacs-xwidget from AUR) (alias e="emacsclient -c -n --alternate-editor=\"\"")
 archey3	                         (requires configuration .bashrc .zshrc)
-emacs    (emacs-xwidget from AUR)
 wget
 xdg-user-dirs
 firefox firefox-i18n-de
