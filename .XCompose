@@ -1,0 +1,216 @@
+include "/usr/share/X11/locale/en_US.UTF-8/Compose"
+
+<dead_grave> <0>		: "₀" U2080 # SUBSCRIPT ZERO
+<dead_grave> <KP_0>		: "₀" U2080 # SUBSCRIPT ZERO
+<dead_grave> <1>		: "₁" U2081 # SUBSCRIPT ONE
+<dead_grave> <KP_1>		: "₁" U2081 # SUBSCRIPT ONE
+<dead_grave> <2>		: "₂" U2082 # SUBSCRIPT TWO
+<dead_grave> <KP_2>		: "₂" U2082 # SUBSCRIPT TWO
+<dead_grave> <3>		: "₃" U2083 # SUBSCRIPT THREE
+<dead_grave> <KP_3>		: "₃" U2083 # SUBSCRIPT THREE
+<dead_grave> <4>		: "₄" U2084 # SUBSCRIPT FOUR
+<dead_grave> <KP_4>		: "₄" U2084 # SUBSCRIPT FOUR
+<dead_grave> <5>		: "₅" U2085 # SUBSCRIPT FIVE
+<dead_grave> <KP_5>		: "₅" U2085 # SUBSCRIPT FIVE
+<dead_grave> <6>		: "₆" U2086 # SUBSCRIPT SIX
+<dead_grave> <KP_6>		: "₆" U2086 # SUBSCRIPT SIX
+<dead_grave> <7>		: "₇" U2087 # SUBSCRIPT SEVEN
+<dead_grave> <KP_7>		: "₇" U2087 # SUBSCRIPT SEVEN
+<dead_grave> <8>		: "₈" U2088 # SUBSCRIPT EIGHT
+<dead_grave> <KP_8>		: "₈" U2088 # SUBSCRIPT EIGHT
+<dead_grave> <9>		: "₉" U2089 # SUBSCRIPT NINE
+<dead_grave> <KP_9>		: "₉" U2089 # SUBSCRIPT NINE
+<dead_grave> <plus>		: "₊" U208A # SUBSCRIPT PLUS SIGN
+<dead_grave> <KP_Add>           : "₊" U208A # SUBSCRIPT PLUS SIGN
+<dead_grave> <U2212>            : "₋" U208B # SUBSCRIPT MINUS
+<dead_grave> <equal>            : "₌" U208C # SUBSCRIPT EQUALS SIGN
+<dead_grave> <KP_Equal>         : "₌" U208C # SUBSCRIPT EQUALS SIGN
+<dead_grave> <parenleft>        : "₍" U208D # SUBSCRIPT LEFT PARENTHESIS
+<dead_grave> <parenright>       : "₎" U208E # SUBSCRIPT RIGHT PARENTHESIS
+
+
+
+<Multi_key> <period> <backslash>		: "λ" U3BB # GREEK SMALL LETTER LAMBDA
+<Multi_key> <p> <i>				: "π" U3C0 # GREEK SMALL LETTER PI
+
+#						  "§" ≙ so    or    s!
+
+#						  "·" ≙ .-
+#						  "÷" ≙ :-
+#						  "√" ≙ v/
+#						  "∞" ≙ 88
+<Multi_key> <3> <v> <slash>			: "∛" U221B
+<Multi_key> <4> <v> <slash>			: "∜" U221C
+<Multi_key> <p> <r> <o>				: "∏" U220F # N-ary product
+<Multi_key> <s> <u> <m>				: "∑" U2211 # N-ary summation
+
+#						  "≡" ≙ =_
+<Multi_key> <asciitilde> <asciitilde>		: "≈" U2248 # ALMOST EQUAL TO 
+<Multi_key> <dead_circumflex> <equal>		: "≙" U2259 # ESTIMATES
+<Multi_key> <equal> <dead_circumflex>		: "≙" U2259 # ESTIMATES
+<Multi_key> <slash> <underscore> <equal>	: "≢" U2262 # _ ≠ NOT IDENTICAL TO
+<Multi_key> <colon> <equal>			: "≔" U2254 # colon equals
+
+<Multi_key> <slash> <bar>			: "∤" U2224 # DOES NOT DIVIDE
+<Multi_key> <bar> <bar>				: "∣" U2223 # DIVIDES
+
+<Multi_key> <V> <minus>				: "∀" U2200 # FOR ALL
+<Multi_key> <3> <bar>				: "∃" U2203 # THERE EXISTS
+<Multi_key> <slash> <3> <bar>			: "∄" U2204 # THERE DOES NOT EXIST
+<Multi_key> <e> <l>				: "∈" U2208 # element of
+<Multi_key> <slash> <e> <l>			: "∉" U2209 # not element of
+<Multi_key> <i> <n>				: "∩" U2229 # intersection
+<Multi_key> <u> <n>				: "∪" U222A # union
+<Multi_key> <s> <u> <b> <equal>			: "⊆"
+<Multi_key> <slash> <s> <u> <b> <equal>		: "⊈"
+<Multi_key> <s> <u> <b> <s>			: "⊂"
+<Multi_key> <slash> <s> <u> <b> <s>		: "⊄"
+#						  "∅" ≙ {}
+
+#						  "¬" ≙ -,
+<Multi_key> <slash> <backslash>			: "∧" U2227 # Logical AND
+<Multi_key> <backslash> <slash>			: "∨" U2228 # Logical OR
+<Multi_key> <o> <plus>				: "⊕" U2295
+<Multi_key> <O> <plus>				: "⊕" U2295
+
+<Multi_key> <less> <comma> <greater>		: "↔" U2194
+<Multi_key> <less> <period> <greater>		: "⇔" U21D4 # LEFT RIGHT DOUBLE ARROW
+<Multi_key> <less> <period> <period>		: "⇐" U21D4 # LEFT DOUBLE ARROW
+
+
+# Greek
+<Multi_key> <dead_tilde> <a> : "α" U03B1 # GREEK SMALL LETTER ALPHA
+<Multi_key> <dead_tilde> <b> : "β" U03B2 # GREEK SMALL LETTER BETA
+<Multi_key> <dead_tilde> <c> : "ψ" U03C8 # GREEK SMALL LETTER PSI
+<Multi_key> <dead_tilde> <d> : "δ" U03B4 # GREEK SMALL LETTER DELTA
+<Multi_key> <dead_tilde> <e> : "ε" U03B5 # GREEK SMALL LETTER EPSILON
+<Multi_key> <dead_tilde> <f> : "φ" U03C6 # GREEK SMALL LETTER PHI
+<Multi_key> <dead_tilde> <g> : "γ" U03B3 # GREEK SMALL LETTER GAMMA
+<Multi_key> <dead_tilde> <h> : "η" U03B7 # GREEK SMALL LETTER ΕΤΑ
+<Multi_key> <dead_tilde> <i> : "ι" U03B9 # GREEK SMALL LETTER ΙΟΤΑ
+<Multi_key> <dead_tilde> <j> : "ξ" U03BE # GREEK SMALL LETTER XI
+<Multi_key> <dead_tilde> <k> : "κ" U03BA # GREEK SMALL LETTER KAPPA
+<Multi_key> <dead_tilde> <l> : "λ" U03BB # GREEK SMALL LETTER LAMBDA
+<Multi_key> <dead_tilde> <m> : "μ" U03BC # GREEK SMALL LETTER MU
+<Multi_key> <dead_tilde> <n> : "ν" U03BD # GREEK SMALL LETTER NU
+<Multi_key> <dead_tilde> <o> : "ο" U03BF # GREEK SMALL LETTER OMICRON
+<Multi_key> <dead_tilde> <p> : "π" U03C0 # GREEK SMALL LETTER PI
+# no mapping for q
+<Multi_key> <dead_tilde> <r> : "ρ" U03C1 # GREEK SMALL LETTER RHO
+<Multi_key> <dead_tilde> <s> : "σ" U03C3 # GREEK SMALL LETTER SIGMA
+<Multi_key> <dead_tilde> <t> : "τ" U03C4 # GREEK SMALL LETTER TAU
+<Multi_key> <dead_tilde> <u> : "θ" U03B8 # GREEK SMALL LETTER THETA
+<Multi_key> <dead_tilde> <v> : "ω" U03C9 # GREEK SMALL LETTER OMEGA
+# <Multi_key> <dead_tilde> <w> : "ς" U03C2 # GREEK SMALL LETTER FINAL SIGMA ## i don't want this
+<Multi_key> <dead_tilde> <x> : "χ" U03C7 # GREEK SMALL LETTER CHI
+<Multi_key> <dead_tilde> <y> : "υ" U03C5 # GREEK SMALL LETTER UPSILON
+<Multi_key> <dead_tilde> <z> : "ζ" U03B6 # GREEK SMALL LETTER ZETA
+
+# Capital greek letters.
+<Multi_key> <dead_tilde> <A> : "Α" U0391 # GREEK CAPITAL LETTER ALPHA
+<Multi_key> <dead_tilde> <B> : "Β" U0392 # GREEK CAPITAL LETTER BETA
+<Multi_key> <dead_tilde> <C> : "Ψ" U03A8 # GREEK CAPITAL LETTER PSI
+<Multi_key> <dead_tilde> <D> : "Δ" U0394 # GREEK CAPITAL LETTER DELTA
+<Multi_key> <dead_tilde> <E> : "Ε" U0395 # GREEK CAPITAL LETTER EPSILON
+<Multi_key> <dead_tilde> <F> : "Φ" U03A6 # GREEK CAPITAL LETTER PHI
+<Multi_key> <dead_tilde> <G> : "Γ" U0393 # GREEK CAPITAL LETTER GAMMA
+<Multi_key> <dead_tilde> <H> : "Η" U0397 # GREEK CAPITAL LETTER ΕΤΑ
+<Multi_key> <dead_tilde> <I> : "Ι" U0399 # GREEK CAPITAL LETTER ΙΟΤΑ
+<Multi_key> <dead_tilde> <J> : "Ξ" U039E # GREEK CAPITAL LETTER XI
+<Multi_key> <dead_tilde> <K> : "Κ" U039A # GREEK CAPITAL LETTER KAPPA
+<Multi_key> <dead_tilde> <L> : "Λ" U039B # GREEK CAPITAL LETTER LAMBDA
+<Multi_key> <dead_tilde> <M> : "Μ" U039C # GREEK CAPITAL LETTER MU
+<Multi_key> <dead_tilde> <N> : "Ν" U039D # GREEK CAPITAL LETTER NU
+<Multi_key> <dead_tilde> <O> : "Ο" U039F # GREEK CAPITAL LETTER OMICRON
+<Multi_key> <dead_tilde> <P> : "Π" U03A0 # GREEK CAPITAL LETTER PI
+# no mapping for Q
+<Multi_key> <dead_tilde> <R> : "Ρ" U03A1 # GREEK CAPITAL LETTER RHO
+<Multi_key> <dead_tilde> <S> : "Σ" U03A3 # GREEK CAPITAL LETTER SIGMA
+<Multi_key> <dead_tilde> <T> : "Τ" U03A4 # GREEK CAPITAL LETTER TAU
+<Multi_key> <dead_tilde> <U> : "Θ" U0398 # GREEK CAPITAL LETTER THETA
+<Multi_key> <dead_tilde> <V> : "Ω" U03A9 # GREEK CAPITAL LETTER OMEGA
+# no W
+<Multi_key> <dead_tilde> <X> : "Χ" U03A7 # GREEK CAPITAL LETTER CHI
+<Multi_key> <dead_tilde> <Y> : "Υ" U03A5 # GREEK CAPITAL LETTER UPSILON
+<Multi_key> <dead_tilde> <Z> : "Ζ" U0396 # GREEK CAPITAL LETTER ZETA
+
+
+# BETA SYMBOL, RHO SYMBOL, KAPPA SYMBOL, PHI SYMBOL, THETA SYMBOL
+<Multi_key> <dead_tilde> <period> <b> : "ϐ" U03D0 # GREEK BETA SYMBOL
+<Multi_key> <dead_tilde> <period> <u> : "ϑ" U03D1 # GREEK THETA SYMBOL
+<Multi_key> <dead_tilde> <period> <Y> : "ϒ" U03D2 # GREEK UPSILON WITH HOOK SYMBOL
+<Multi_key> <dead_tilde> <period> <f> : "ϕ" U03D5 # GREEK PHI SYMBOL
+<Multi_key> <dead_tilde> <period> <k> : "ϰ" U03F0 # GREEK KAPPA SYMBOL
+<Multi_key> <dead_tilde> <period> <r> : "ϱ" U03F1 # GREEK RHO SYMBOL
+<Multi_key> <dead_tilde> <period> <U> : "ϴ" U03F4 # GREEK CAPITAL THETA SYMBOL
+<Multi_key> <dead_tilde> <period> <e> : "ϵ" U03F5 # GREEK LUNATE EPSILON SYMBOL
+
+
+
+
+<Multi_key> <B> <A>				: "𝔸"
+<Multi_key> <B> <B>				: "𝔹"
+<Multi_key> <B> <C>				: "ℂ"
+<Multi_key> <B> <D>				: "𝔻"
+<Multi_key> <B> <E>				: "𝔼"
+<Multi_key> <B> <F>				: "𝔽"
+<Multi_key> <B> <G>				: "𝔾"
+<Multi_key> <B> <H>				: "ℍ"
+<Multi_key> <B> <I>				: "𝕀"
+<Multi_key> <B> <J>				: "𝕁"
+<Multi_key> <B> <K>				: "𝕂"
+<Multi_key> <B> <L>				: "𝕃"
+<Multi_key> <B> <M>				: "𝕄"
+<Multi_key> <B> <N>				: "ℕ"
+<Multi_key> <B> <O>				: "𝕆"
+<Multi_key> <B> <P>				: "ℙ"
+<Multi_key> <B> <Q>				: "ℚ"
+<Multi_key> <B> <R>				: "ℝ"
+<Multi_key> <B> <S>				: "𝕊"
+<Multi_key> <B> <T>				: "𝕋"
+<Multi_key> <B> <U>				: "𝕌"
+<Multi_key> <B> <V>				: "𝕍"
+<Multi_key> <B> <W>				: "𝕎"
+<Multi_key> <B> <X>				: "𝕏"
+<Multi_key> <B> <Y>				: "𝕐"
+<Multi_key> <B> <Z>				: "ℤ"
+<Multi_key> <colon> <parenright>				: "😊"  # overriding ☺
+<Multi_key> <colon> <D>				: "😄"
+<Multi_key> <colon> <d>				: "😃"
+<Multi_key> <colon> <0>				: "😬"
+<Multi_key> <colon> <P>				: "😜"
+<Multi_key> <semicolon> <parenright>				: "😉"
+<Multi_key> <o> <period> <O>				: "😳"
+<Multi_key> <colon> <o>				: "😮"
+<Multi_key> <colon> <O>				: "😧"
+<Multi_key> <O> <colon> <O>				: "😨"
+<Multi_key> <colon> <slash>				: "😕"
+<Multi_key> <minus> <period> <minus>			: "😑"
+<Multi_key> <plus> <1>				: "👍"
+<Multi_key> <minus> <1>				: "👎"
+<Multi_key> <colon> <asterisk>				: "😘"
+<Multi_key> <minus> <less>				: "🌹"
+<Multi_key> <z> <z> <z>				: "😴"
+<Multi_key> <o> <k>				: "👌"
+<Multi_key> <greater> <colon> <parenleft>	: "😠"
+<Multi_key> <greater> <colon> <minus> <parenleft>	: "😡"
+<Multi_key> <s> <w> <e> <a> <t>	: "😅"
+<Multi_key> <S> <W> <E> <A> <T>	: "😰"
+<Multi_key> <A> <f> <f> <e>	: "🐒"
+
+<Multi_key> <A> <F> <F> <E>	: "🐵"
+<Multi_key> <a> <f> <f> <e>	: "🙈"
+<Multi_key> <a> <f> <f> <E>	: "🙊"
+<Multi_key> <A> <f> <f> <E>	: "🙉"
+<Multi_key> <p> <e> <n> <g> <u> <i> <n>	: "🐧"
+<Multi_key> <d> <o> <g>	: "🐶"
+<Multi_key> <s> <a> <d>	: "😢"
+<Multi_key> <w> <e> <i> <n> <e>	: "😭"
+
+<Multi_key> <f> <t> : "(╯°□°)╯︵ ┻━┻"
+<Multi_key> <g> <i> <f> <f> : "༼ つ ◕_◕ ༽つ"
+<Multi_key> <l> <e> <n> <n> <y> : "( ͡° ͜ʖ ͡°)"
+<Multi_key> <L> <e> <n> <n> <y> : "( ͡o ͜ʖ ͡o)"
+<Multi_key> <L> <E> <N> <N> <Y> : "( ͡◉ ͜ʖ ͡◉)"
+
+<Multi_key> <s> <u> <n> : "семечки"
