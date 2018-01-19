@@ -476,6 +476,7 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'") end, {description = "Make Screenshot", group = "Utility"}),
     awful.key({ }, "XF86MonBrightnessUp",     function () awful.util.spawn_with_shell("xbacklight -inc 10")    end, {description = "Increase Background Light", group = "Utility"}),
     awful.key({ }, "XF86MonBrightnessDown",   function () awful.util.spawn_with_shell("xbacklight -dec 10")    end, {description = "Decrease Background Light", group = "Utility"}),
+    awful.key({ modkey, "Control" }, "l",     function () awful.util.spawn_with_shell("xscreensaver-command -lock")    end, {description = "Lock system", group = "Utility"}),
 
     --MyChagnes (Keycombos)
     awful.key({ modkey,           }, ".",     function () kbdcfg.switch(1)  end, {description = "Next Keyboard Layout", group = "Utility"}),
@@ -762,6 +763,9 @@ awful.util.spawn_with_shell("~/Applications/Scripts/runOnce.sh parcellite") -- a
 awful.util.spawn_with_shell("~/Applications/Scripts/runOnce.sh nm-applet")
 if os.getenv("LAPTOP") then
    awful.util.spawn_with_shell("~/Applications/Scripts/runOnce.sh cbatticon")
+end
+if os.getenv("LAPTOP") or os.getenv("DESKTOP_WORK") then
+   awful.util.spawn_with_shell("~/Applications/Scripts/runOnce.sh xscreensaver")
 end
 -- Audio Output as Input / "Virtual Audio Cable"
 if os.getenv("PA_SINKNAME") and os.getenv("PA_SINKRATE") then  -- pactl list | grep Sink -A 5
