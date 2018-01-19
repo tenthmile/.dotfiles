@@ -776,6 +776,5 @@ if os.getenv("PA_SINKNAME") and os.getenv("PA_SINKRATE") then  -- pactl list | g
    pa_sinkrate = pa_sinkrate:gsub(";", "")
    
    awful.util.spawn_with_shell("(pactl list | grep web_stream) || (pactl load-module module-null-sink sink_name=\"webstream_sink\" sink_properties=device.description=\"web_stream\" && pactl load-module module-loopback source=webstream_sink.monitor sink=" .. pa_sinkname .. " rate=" .. pa_sinkrate .. ")")
-   naughty.notify { text = "(pactl list | grep web_stream) || (pactl load-module module-null-sink sink_name=\"webstream_sink\" sink_properties=device.description=\"web_stream\" && pactl load-module module-loopback source=webstream_sink.monitor sink=" .. pa_sinkname .. " rate=" .. pa_sinkrate .. ")", timeout = 0 }
 end
 
