@@ -2,6 +2,7 @@
 --[[
                                                   
      Licensed under GNU General Public License v2 
+      * (c) 2017,      tenthmile
       * (c) 2016,      Henrik Antonsson           
       * (c) 2015,      Joerg Jaspert              
       * (c) 2014,      projektile                 

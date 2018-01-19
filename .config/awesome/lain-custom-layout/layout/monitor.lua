@@ -2,6 +2,7 @@
 --[[
                                                   
      Licensed under GNU General Public License v2 
+      * (c) 2017,      tenthmile
       * (c) 2014,      projektile                 
       * (c) 2013,      Luke Bonham                
       * (c) 2010-2012, Peter Hofmann              
