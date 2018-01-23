@@ -756,11 +756,12 @@ if os.getenv("DESKTOP") or os.getenv("DESKTOP") or true then -- high dpi systems
    awful.util.spawn_with_shell("xrdb -merge ~/.Xresources")
 end
 
--- Autostart
+-- Autorun/Autostart
 awful.util.spawn_with_shell("~/Applications/Scripts/runOnceSearchTerm.sh emojione-picker ~/Applications/emojione-picker-ubuntu-master/emojione-picker")
 awful.util.spawn_with_shell("~/Applications/Scripts/runOnceSearchTerm.sh multiload-ng multiload-ng-systray")
 awful.util.spawn_with_shell("~/Applications/Scripts/runOnce.sh parcellite") -- alternative clipit
 awful.util.spawn_with_shell("~/Applications/Scripts/runOnce.sh nm-applet")
+awful.util.spawn_with_shell("alarm-clock-applet --hidden")
 if os.getenv("LAPTOP") then
    awful.util.spawn_with_shell("~/Applications/Scripts/runOnce.sh cbatticon")
 end
