@@ -177,14 +177,15 @@ pacaur
 multiload-ng(-systray-gtk3)
 (qpdfview) (we already got okular)
 cloudstation / cloudstationdrive / synology-cloud-station-drive (jenachdem welches gerade in der aur ist.)
-rtags-git (emacs c++ indexing and such)
+(rtags-git) (emacs c++ indexing and such)
 cups-bjnp (enable network printing for some canon printers)
 (cnijfilter-mp640) (maybe we can do it with just the bjnp)
-projectlibre (SOPRA, alternative to Microsoft Project)
+(projectlibre) (alternative to Microsoft Project)
 steamos-xpad-dkms (fix bug with xbox controller. Requires dkms installed AND RUNNING)
 downgrader
 chromium-widevine (damit man mit chromium Amazon Prime Video/Amazon Instant Video schauen kann. chrome://plugins)
 awesome-freedesktop-git
+alarm-clock-applet
 
 libretro-mame-git (mame)
 
