@@ -1,6 +1,4 @@
 #!/bin/bash
-# Todo. e.g. multiple VLC instances. Just choose the one with the biggest id (a.k.a. the newest).
-# todo improve the queuing of the sound id.
 # todo limit volume to <= 100
 
 configFile=~/.paChangeStreamVolume
@@ -25,14 +23,22 @@ Mandatory arguments:
     fi
 fi
 
-cat $configFile | while read programName
+foundStream=0
+while read programName
 do
     # this var may contain multiple lines (e.g. multiple Chromium instances) or fail if no instance of that program was found
     soundStreamIds=$(pactl list sink-inputs | grep -B 30 "application.name = \"$programName" | grep "Sink Input" | awk 'BEGIN {FS="#"}; {print $2} END {if (NR==0) exit 1}')
     if [ $? -eq 0 ]; then # we found 1 or many instances
+        foundStream=1
         while read -r streamId; do # iterate over many instances so we can change the volume of every stream
             pactl set-sink-input-volume $streamId $2$1%
         done <<< "$soundStreamIds"
         break
     fi
-done
+done <$configFile
+
+echo $foundStream
+if [ $foundStream -eq 0 ]; then
+    echo inc $foundStream
+    pactl set-sink-volume @DEFAULT_SINK@ $2$1%
+fi
