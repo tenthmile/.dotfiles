@@ -761,12 +761,15 @@ awful.util.spawn_with_shell("~/Applications/Scripts/runOnceSearchTerm.sh emojion
 awful.util.spawn_with_shell("~/Applications/Scripts/runOnceSearchTerm.sh multiload-ng multiload-ng-systray")
 awful.util.spawn_with_shell("~/Applications/Scripts/runOnce.sh parcellite") -- alternative clipit
 awful.util.spawn_with_shell("~/Applications/Scripts/runOnce.sh nm-applet")
-awful.util.spawn_with_shell("alarm-clock-applet --hidden")
+awful.util.spawn_with_shell("~/Applications/Scripts/runOnceSearchTerm.sh alarm-clock alarm-clock-applet --hidden")
 if os.getenv("LAPTOP") then
    awful.util.spawn_with_shell("~/Applications/Scripts/runOnce.sh cbatticon")
 end
 if os.getenv("LAPTOP") or os.getenv("DESKTOP_WORK") then
    awful.util.spawn_with_shell("~/Applications/Scripts/runOnce.sh xscreensaver")
+end
+if os.getenv("LAPTOP") or os.getenv("DESKTOP") then
+   awful.util.spawn_with_shell("~/Applications/Scripts/runOnceSearchTerm.sh emacs emacs --daemon")
 end
 -- Audio Output as Input / "Virtual Audio Cable"
 if os.getenv("PA_SINKNAME") and os.getenv("PA_SINKRATE") then  -- pactl list | grep Sink -A 5
