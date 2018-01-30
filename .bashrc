@@ -8,6 +8,8 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
+export HISTCONTROL=ignorespace   # zsh equivalent: setopt histignorespace
+
 alias ec="emacs -Q -nw -f full-calc"
 alias e="emacsclient -c -n --alternate-editor=\"\""
 
