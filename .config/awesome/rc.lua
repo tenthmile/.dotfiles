@@ -747,9 +747,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 --MyChanges
 -- Apply correct keyboad layout
 kbdcfg.switch(0)
-if os.getenv("LAPTOP") or os.getenv("DESKTOP_WORK") then
-   awful.util.spawn_with_shell("numlockx on")
-end
+awful.util.spawn_with_shell("numlockx on")
 
 -- Settings
 -- Font
