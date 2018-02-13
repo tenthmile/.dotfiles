@@ -54,6 +54,7 @@ else
 end
 editor = os.getenv("EDITOR") or "emacsclient -c -n --alternate-editor=\"\"" --MyChanges
 editor_cmd = terminal .. " -e " .. editor
+homedir = os.getenv("HOME") --MyChanges
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -112,18 +113,18 @@ myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
    { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
-   { "quit", awesome.quit }
+   { "quit", function() awesome.quit() end }
 }
 
 --MyChanges -- TODO only add entry if executable exists
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                              { "open terminal", terminal },
                              { "Filebrowser", "pcmanfm", "/usr/share/icons/hicolor/48x48/devices/blueman-desktop.png" },
-			     { "Emacs", "emacs", "/usr/share/icons/hicolor/48x48/apps/emacs.png" },
+			     { "Emacs", editor, "/usr/share/icons/hicolor/48x48/apps/emacs.png" },
 			     { "Firefox", "firefox", "/usr/share/icons/hicolor/48x48/apps/firefox.png" },
 			     { "Thunderbird", "thunderbird", "/usr/share/icons/hicolor/48x48/apps/thunderbird.png" },
                              { "WhatsApp", "whatsapp-web-desktop", "/opt/whatsapp-web/resources/app/icon.png" },
-                             { "Signal", "kioclient exec .local/share/applications/chrome-bikioccmkafdpakkkcpdbppfkghcmihk-Default.desktop", "/home/maile/.local/share/icons/hicolor/48x48/apps/chrome-bikioccmkafdpakkkcpdbppfkghcmihk-Default.png" },
+                             { "Signal", "kioclient exec .local/share/applications/chrome-bikioccmkafdpakkkcpdbppfkghcmihk-Default.desktop", homedir .. "/.local/share/icons/hicolor/48x48/apps/chrome-bikioccmkafdpakkkcpdbppfkghcmihk-Default.png" },
 			     { "Teamspeak", "teamspeak3", "/usr/share/icons/hicolor/48x48/devices/blueman-headset.png" },
                              { "Music Player", "quodlibet", "/usr/share/icons/hicolor/48x48/apps/quodlibet.png"},
                              { "Chromium", "chromium", "/usr/share/icons/hicolor/48x48/apps/chromium.png"},
