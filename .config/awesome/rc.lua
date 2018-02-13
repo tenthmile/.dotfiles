@@ -198,10 +198,16 @@ emacsd.menu = awful.menu({ items = {
                               { "Show Agenda", emacsd.commands[1] },
                               { "Unscheduled TODOs", emacsd.commands[2] },
                               { "Stop Emacs server", emacsd.commands[3] },
+                              { "Sync with ...",
+                                {
+                                   { "Android", terminal .. " -e " .. homedir .. "/Documents/org/0sync_with_android.sh" },
+                                   { "home computers", terminal .. " -e " .. homedir .. "/Documents/org/0sync_with_home_computers.sh" }
+                                   -- { "workplace computer", terminal .. " -e " .. homedir .. "/Documents/org/0sync_with_workplace_computer.sh" },
+                                }, "/usr/share/icons/hicolor/48x48/apps/knetattach.png"
+                              },
                               { "cancel", "" }}})
 emacsd.widget = awful.widget.launcher({ image = "/usr/share/icons/hicolor/16x16/apps/emacs.png",
                                         menu = emacsd.menu})
-
 
 
 -- {{{ Wibar
