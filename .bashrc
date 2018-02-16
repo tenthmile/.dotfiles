@@ -12,6 +12,7 @@ export HISTCONTROL=ignorespace   # zsh equivalent: setopt histignorespace
 
 alias ec="emacs -Q -nw -f full-calc"
 alias e="emacsclient -c -n --alternate-editor=\"\""
+alias newestFile="find -type f -exec stat \{\} --printf=\"%y\\n\" \\; | sort -n -r | head -n 1"
 
 if [ -f /bin/archey3 ]; then
     archey3
