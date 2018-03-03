@@ -234,7 +234,7 @@ emacsd.menu = awful.menu({ items = {
                                    -- { "workplace computer", terminal .. " -e " .. homedir .. "/Documents/org/0sync_with_workplace_computer.sh" },
                                 }, "/usr/share/icons/hicolor/48x48/apps/knetattach.png"
                               },
-                              { "cancel", "" }}})
+                              { "cancel", "" }}, theme = {width=150}})
 emacsd.widget = awful.widget.launcher({ image = "/usr/share/icons/hicolor/16x16/apps/emacs.png",
                                         menu = emacsd.menu})
 
