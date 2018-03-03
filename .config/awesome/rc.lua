@@ -787,7 +787,18 @@ if os.getenv("PA_SINKNAME") and os.getenv("PA_SINKRATE") then  -- pactl list | g
    pa_sinkrate = pa_sinkrate:gsub("\n", "")
    pa_sinkrate = pa_sinkrate:gsub("\\", "")
    pa_sinkrate = pa_sinkrate:gsub(";", "")
-   
+
    awful.util.spawn_with_shell("(pactl list | grep web_stream) || (pactl load-module module-null-sink sink_name=\"webstream_sink\" sink_properties=device.description=\"web_stream\" && pactl load-module module-loopback source=webstream_sink.monitor sink=" .. pa_sinkname .. " rate=" .. pa_sinkrate .. ")")
+
+   if os.getenv("PA_MICROPHONE") then
+      local pa_microphone = os.getenv("PA_MICROPHONE")
+      pa_sinkrate = pa_sinkrate:gsub("\n", "")
+      pa_sinkrate = pa_sinkrate:gsub("\\", "")
+      pa_sinkrate = pa_sinkrate:gsub(";", "")
+
+      awful.util.spawn_with_shell("(pactl list | grep mixed_audio) || (pactl load-module module-null-sink sink_name=\"mixed_audio\" sink_properties=device.description=\"mixed_audio_stream\" &&\
+                                                                       pactl load-module module-loopback source=webstream_sink.monitor sink=mixed_audio &&\
+                                                                       pactl load-module module-loopback source=" .. pa_microphone .. " sink=mixed_audio)")
+   end
 end
 
