@@ -194,6 +194,9 @@ emacsd.commands = { function () awful.util.spawn_with_shell(emacsd.emacs .. " -e
    function () awful.util.spawn_with_shell(emacsd.emacs .. " -e \"(org-agenda nil \\\"u\\\")\"") end,  -- 'u' is a custom command for unfinished unscheduled tasks (that also have no deadline). In other words, show stuff I want to do when I have time
    function () awful.util.spawn_with_shell("emacsclient -c -e \"(save-buffers-kill-emacs)\"") end
 }
+emacsd.sync = {}
+emacsd.sync.ip   = "192.168."
+emacsd.sync.port = "2222"
 emacsd.menu = awful.menu({ items = {
                               { "Show Agenda", emacsd.commands[1] },
                               { "Unscheduled TODOs", emacsd.commands[2] },
@@ -201,7 +204,33 @@ emacsd.menu = awful.menu({ items = {
                               { "Sync with ...",
                                 {
                                    { "Android", terminal .. " -e " .. homedir .. "/Documents/org/0sync_with_android.sh" },
-                                   { "home computers", terminal .. " -e " .. homedir .. "/Documents/org/0sync_with_home_computers.sh" }
+                                   { "home computers", terminal .. " -e " .. homedir .. "/Documents/org/0sync_with_home_computers.sh" },
+                                   { "ip",
+                                     function()
+                                        awful.prompt.run {
+                                           prompt       = '<b>IP: </b>',
+                                           text         = emacsd.sync.ip,
+                                           bg_cursor    = '#ff0000',
+                                           textbox      = mouse.screen.mypromptbox.widget,
+                                           exe_callback = function(input)
+                                              if not input or #input == 0 then return end
+                                              emacsd.sync.ip = input
+
+                                              awful.prompt.run {
+                                                 prompt       = '<b>Port: </b>',
+                                                 text         = emacsd.sync.port,
+                                                 bg_cursor    = '#ff0000',
+                                                 textbox      = mouse.screen.mypromptbox.widget,
+                                                 exe_callback = function(input)
+                                                    if not input or #input == 0 then return end
+                                                    emacsd.sync.port = input
+                                                    awful.util.spawn_with_shell(terminal .. " -e env syncAddress=" .. emacsd.sync.ip .. " syncPort=" .. emacsd.sync.port .. " " .. homedir .. "/Documents/org/0sync_with_android.sh")
+                                                 end
+                                              }
+                                           end
+                                        }
+                                     end
+                                   }
                                    -- { "workplace computer", terminal .. " -e " .. homedir .. "/Documents/org/0sync_with_workplace_computer.sh" },
                                 }, "/usr/share/icons/hicolor/48x48/apps/knetattach.png"
                               },
