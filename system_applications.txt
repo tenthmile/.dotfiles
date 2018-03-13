@@ -68,7 +68,7 @@ obs-studio                  (maybe "obs-studio-git" is needed for mixer.com stre
 avidemux-qt
 
 privoxy (webpage filter)         (requires configuration)
-xorg-xinput (xinput set-prop 14 --type=float "Coordinate Transformation Matrix" 0.392 0 0.215 0 0.642857 0 0 0 1) (graphic tablet)
+xorg-xinput (xinput set-prop PENID --type=float "Coordinate Transformation Matrix" xWidth 0 xOffset 0 yHeight yOffset 0 0 1) (graphic tablet) (e.g. xinput set-prop 21 --type=float "Coordinate Transformation Matrix" 0.785 0 0.215 0 0.8 0.2 0 0 1)
 xorg-xev    (reading keys)
 xorg-xmodmap (mapping keys (alternative to complex xkbcomp))
 xorg-xrdb (load Xresources file)
