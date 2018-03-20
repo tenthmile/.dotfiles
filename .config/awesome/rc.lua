@@ -510,6 +510,7 @@ globalkeys = awful.util.table.join(
     
     --MyChagnes (Special Keys)
     awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'") end, {description = "Make Screenshot", group = "Utility"}),
+    awful.key({ modkey, }, "Print", function () awful.util.spawn("scrot -u -e 'mv $f ~/screenshots/ 2>/dev/null'") end, {description = "Make Screenshot of current window", group = "Utility"}),
     awful.key({ }, "XF86MonBrightnessUp",     function () awful.util.spawn_with_shell("xbacklight -inc 10")    end, {description = "Increase Background Light", group = "Utility"}),
     awful.key({ }, "XF86MonBrightnessDown",   function () awful.util.spawn_with_shell("xbacklight -dec 10")    end, {description = "Decrease Background Light", group = "Utility"}),
     awful.key({ modkey, "Control" }, "l",     function () awful.util.spawn_with_shell("xscreensaver-command -lock")    end, {description = "Lock system", group = "Utility"}),

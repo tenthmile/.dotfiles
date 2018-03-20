@@ -28,6 +28,7 @@ do
         relativeName="${fullpath#$fromBaseDir/}"
         # escape special characters if for example you copy files with gio.
         relativeNameEscaped=$(sed -e 's/%/%25/g' <<< $relativeName)
+        relativeNameEscaped=$(sed -e 's/#/%23/g' <<< $relativeNameEscaped)
         
 
         if [[ "$excludeIfExistsIn" ]]; then
