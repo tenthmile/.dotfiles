@@ -105,6 +105,9 @@ vulkan-devel
 figlet (artist-mode text rendering emacs)
 ghc (cabal-install)
 antlr4
+perl-rename # in order to easily rename files with find. e.g.
+            # replace ` with '       find RootFolder -iname "*\`*" -type f -execdir perl-rename "s/\`/'/" {} \;
+            # make files lowercase   find RootFolder -depth -exec perl-rename 's/(.*)\/([^\/]*)/$1\/\L$2/' {} \;
 
 # ergodox teensy development:
 avr-gcc
@@ -143,6 +146,7 @@ flashplugin lib32-flashplugin
 thermald
 cpupower
 lm_sensors xsensors
+# (nct6775-dkms-git # aur für ryzen 1700 auf MSI x370 Motherboard)
 
 # Virtualization: (UEFI: Enable AMD-v extensions or Intel VT)
 virtualbox virtualbox-host-modules-arch
@@ -153,8 +157,11 @@ lib32-mpg123
 
 # Music:
 vmpk (/etc/conf.d/fluidsynth:
-      AUDIO_DRIVER=pulseaudio
-      OTHER_OPTS='-m alsa_seq -r 48000'  systemctl --user start fluidsynth.service)
+      OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'
+      systemctl --user start fluidsynth.service
+      # the launch should look like ExecStart=/usr/bin/fluidsynth -is -a pulseaudio -m alsa_seq -r 48000 /usr/share/soundfonts/FluidR3_GM.sf2
+      # Edit > Midi-Connections: Enable MIDI Input. MIDI IN Driver: ALSA. Enable MIDI Thru on MIDI Output. (Alsa, Fluid synth)
+      )
 soundfont-fluid
 fluidsynth
 
@@ -186,6 +193,7 @@ downgrader
 chromium-widevine (damit man mit chromium Amazon Prime Video/Amazon Instant Video schauen kann. chrome://plugins)
 awesome-freedesktop-git
 alarm-clock-applet
+nct6775-dkms-git # temperaturanzeige auf x370 board
 
 libretro-mame-git (mame)
 
@@ -340,14 +348,10 @@ My Templates
 Set as Default
 
 
+# x370 Board
+/etc/modprobe.d/nct6775.conf (sudo sensors-detect ... Found unknown chip with ID 0xd352 => sudo modprobe nct6775 force_id=0xd352):
+options nct6775 force_id=0xd352
 
-cabal:
-cabal update
-cabal install happy
-cabal install hlint    ????
-cabal install ghc-mod
-cabal install hoogle
-~/.cabal/bin/hoogle data
 
 
 shell-alias (.bashrc or .zshrc):
@@ -381,3 +385,4 @@ Backup:
 
 Laptop:
 ggf. blacklist ideapad_laptop
+https://github.com/yath/ybacklight/blob/master/ybacklight
