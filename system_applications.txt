@@ -30,6 +30,7 @@ ttf-tibetan-machine              (for "giff" emoticon)
 udisks2
 parted gptfdisk ntfs-3g exfat-utils dosfstools
 alsa-utils lib32-alsa-plugins
+pacman-contrib                   (for pactree)
 ntp                              (maybe requires configuration)
 numlockx
 samba
@@ -75,7 +76,7 @@ xorg-xrdb (load Xresources file)
 inkscape
 xournal (or any other  note-taking journal sketching handwriting tablet-pc handwritten-notes software)
 
-skype
+#skype
 teamspeak3
 
 libreoffice-still libreoffice-still-de
@@ -180,11 +181,11 @@ modem-manager-gui
 arandr (easier xrandr)
 
 AUR:
-pacaur
+aurman
 multiload-ng(-systray-gtk3)
 (qpdfview) (we already got okular)
 cloudstation / cloudstationdrive / synology-cloud-station-drive (jenachdem welches gerade in der aur ist.)
-(rtags-git) (emacs c++ indexing and such)
+#(rtags-git) (emacs c++ indexing and such)
 cups-bjnp (enable network printing for some canon printers)
 (cnijfilter-mp640) (maybe we can do it with just the bjnp)
 (projectlibre) (alternative to Microsoft Project)
@@ -211,6 +212,7 @@ Manual:
 PlatUML (http://plantuml.com/) (UML Modeling Tool with Text)
 https://github.com/gentakojima/emojione-picker-ubuntu   (benötigt libappindicator-gtk3 python2-gobject)
 Signal Chromium Web App
+minecraft
 
 Important Settings:
 /usr/share/wine/wine.inf (at the [Services] section)
