@@ -1,3 +1,92 @@
 File>Settings>Editor>General>Virtual Space>☑ Show virtual space at file bottom
 File>Settings>Editor>General>Typing Assistance>Miscellaneous>Surround selection on typing quote or brace       or   File>Settings>Editor>Smart Keys>Surround selection on typing quote or brace
 File>Settings>Editor>TODO> + "(?<=\W|^)(?<TAG>TODO)(\W|$)(.*)"
+
+Editor Actions:
+  Clone Caret Above: C-<
+  Add Selection for Next Occurrence: C->
+  Copy: M-w
+  Cut: C-w
+  Delete Line: <None>
+  Duplicate Line or Selection: <None>
+  Page Down: C-v
+  Page Up: M-v
+  Scroll to Center: C-l
+  Extend Selection: C-=
+  Move Caret to Text End: M->
+  Move Caret to Text Start: M-<
+  Toggle Sticky Selection: C-Space
+  Undo: M-/
+  Redo: M-?
+  Down: C-n (leave)
+  Up: C-p (leave)
+  Left: C-b
+  Right: C-f
+  Move Caret to Line Start: C-a
+  Move Caret to Line End: C-e
+  Move Caret to Next Word: M-f
+  Move Caret to Previous Word: M-b
+  Move Caret Backward a Paragraph: M-[     (todo set this in emacs)
+  Move Caret Forward a Paragraph: M-]     (todo set this in emacs)
+
+Main menu:
+  Edit Actions:
+    Cut: C-w
+    Copy: M-w
+    Paste: C-y
+    Delete: C-d
+    Find:
+      Find... & Find Next / Move to Next Occurrence: C-s
+      Find... & Find Previous / Move to Previous Occurrence: C-r
+    Extend Selection: C-=
+    Select All: C-x h
+    Duplicate Line or Selection: <None>
+    Undo: M-/
+    Redo: M-?
+    
+  Navigate:
+    Class... C-x B
+    Declaration M-g d          // TODO: set in emacs
+    Type Declaration M-g D     // TODO: set in emacs
+    //File... C-x b
+    Recent File... C-x b
+    Line/Column... M-g g
+  
+  Code:
+    Completion:
+      Basic: M-/
+      SmartType: M-?
+      Cyclic Expand Word: C-M-/
+      Cyclic Expand Word (Backwards): C-M-?
+    Folding:
+      Expand: C-c s
+      Collapse: C-c h
+      Expand All: C-c S
+      Collapse All: C-c H
+    Comment with Line Comment: C-x C-;
+    Comment with Block Comment: C-x /   (todo set in emacs)
+
+  View:
+    Quick Documentation: C-h d
+    Quick Definition: C-h D
+    Error Definition: C-h e
+    Parameter Info: C-h p
+    Expression Type: C-h t
+
+  Window:
+    Editor Tabs:
+      Close C-x k
+      Split Vertically: C-x 3
+      Split Horizontally: C-x 2
+      Goto Next Splitter: C-x o
+      Goto Previous Splitter: C-x O
+      Move Right: C-x Right
+      Move Down: C-x Down
+      Unsplit: C-x 0
+      Unsplit All: C-x 1
+    
+
+???
+Navigate>Type Hierarchy
+Other>Actual Size
+
