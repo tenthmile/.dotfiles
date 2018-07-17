@@ -65,7 +65,7 @@ dhclient # use in conjunction with networkmanager (supports ipv6/solves eduroam 
 network-manager-applet # (tray icon for wlan & uni vpn)
 networkmanager-openconnect # way better then cisco connect from the uni website
 ffmpeg
-obs-studio                  (maybe "obs-studio-git" is needed for mixer.com streaming)
+obs-studio                  (maybe "obs-studio-git" is needed for mixer.com streaming). # Plugin: Input Overlay. needs "libuiohook".
 avidemux-qt
 
 privoxy (webpage filter)         (requires configuration)
