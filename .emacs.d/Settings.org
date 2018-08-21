@@ -247,8 +247,13 @@ I use [[https://ogbe.net/emacsconfig.html][Dennis' Emacs configuration theme]] f
     (set-face-attribute 'region nil :background "orange" :foreground "black")
     (if (display-graphic-p)
         (progn
-          (set-face-attribute 'helm-selection nil :background "gray80")
-          (set-face-background 'hl-line "gray80"))
+          ;; dark theme
+          (set-face-attribute 'helm-selection nil :background "gray30")
+          (set-face-background 'hl-line "gray30")
+          ;; bright theme
+          ;;(set-face-attribute 'helm-selection nil :background "gray80")
+          ;;(set-face-background 'hl-line "gray80")
+          )
       (progn
         (set-face-attribute 'helm-selection nil :background "color-235")
         (set-face-background 'hl-line "color-235")))
@@ -272,7 +277,7 @@ This needs to run after every command, since some modes screw with the cursor.
 
 *** Theme
 
-I like the =sanityinc-tomorrow-day= for a bright Emacs.
+I like the =sanityinc-tomorrow-day= for a bright Emacs (however this does not activate it. It will be activated later).
 #+Begin_SRC emacs-lisp :tangle yes
   (use-package color-theme-sanityinc-tomorrow)
 #+END_SRC
@@ -344,7 +349,8 @@ Therefore we run a function after the application of the theme to apply my patch
 
 All in all it looks like this:
 #+BEGIN_SRC emacs-lisp :tangle yes
-    (defvar my:theme 'sanityinc-tomorrow-day)
+    ;;(defvar my:theme 'sanityinc-tomorrow-day) ;; gui bright
+    (defvar my:theme 'wombat) ;; gui dark
     ;;(defvar my:theme-terminal 'tango)
     (defvar my:theme-window-loaded nil)
     (defvar my:theme-terminal-loaded nil)
@@ -359,7 +365,7 @@ All in all it looks like this:
             ;; make outline/orgmode color readable again (on white background)
             (set-face-attribute 'outline-4 nil :foreground "magenta")
             ;; bar seperating line numbers and text
-            (set-face-attribute 'fringe nil :background "#F0F0F0")
+            (set-face-attribute 'fringe nil :background "DimGrey") ;; "#F0F0F0"
             ;; org-mode agenda tasks that start today should not be green (like finished tasks)
             (set-face-attribute 'org-scheduled-today nil :foreground "black" :weight 'semi-bold)
             (set-face-attribute 'org-scheduled nil :foreground "black")
