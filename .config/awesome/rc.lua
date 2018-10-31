@@ -13,7 +13,7 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 --MyChanges
 local lain = require("lain")
 
---MyChagnes Offtopic:
+--MyChanges Offtopic:
 -- If I need to debug something: naughty.notify { text = debug.traceback(), timeout = 0 }
 
 -- {{{ Error handling
@@ -124,7 +124,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 			     { "Firefox", "firefox", "/usr/share/icons/hicolor/48x48/apps/firefox.png" },
 			     { "Thunderbird", "thunderbird", "/usr/share/icons/hicolor/48x48/apps/thunderbird.png" },
                              { "WhatsApp", "whatsapp-web-desktop", "/opt/whatsapp-web/resources/app/icon.png" },
-                             { "Signal", "kioclient exec .local/share/applications/chrome-bikioccmkafdpakkkcpdbppfkghcmihk-Default.desktop", homedir .. "/.local/share/icons/hicolor/48x48/apps/chrome-bikioccmkafdpakkkcpdbppfkghcmihk-Default.png" },
+                             { "Signal", "signal-desktop", "/usr/share/icons/hicolor/48x48/apps/signal-desktop.png" },
 			     { "Teamspeak", "teamspeak3", "/usr/share/icons/hicolor/48x48/devices/blueman-headset.png" },
                              { "Music Player", "quodlibet", "/usr/share/icons/hicolor/48x48/apps/quodlibet.png"},
                              { "Chromium", "chromium", "/usr/share/icons/hicolor/48x48/apps/chromium.png"},
@@ -139,11 +139,11 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
-app_folders = { "/usr/share/applications/", "~/.local/share/applications/" } --MyChagnes (*.desktop files require a valid "Categories=[...]" entry (see https://standards.freedesktop.org/menu-spec/latest/apa.html).)
+app_folders = { "/usr/share/applications/", "~/.local/share/applications/" } --MyChanges (*.desktop files require a valid "Categories=[...]" entry (see https://standards.freedesktop.org/menu-spec/latest/apa.html).)
 -- }}}
 
 -- Keyboard map indicator and switcher
---mykeyboardlayout = awful.widget.keyboardlayout() --MyChagnes (commented out, didn't work)
+--mykeyboardlayout = awful.widget.keyboardlayout() --MyChanges (commented out, didn't work)
 --MyChanges
 kbdcfg = {}
 kbdcfg.cmd = "setxkbmap"
@@ -161,12 +161,12 @@ else -- os.getenv("DESKTOP_WORK")
 end
 -- {keymap, variante, GUI-Name, POST-Settings},
 kbdcfg.keymap = {
-   { "us", "", "USA",                       kbdcfg.post_apply_function},
+   { "us", "altgr-intl", "USA",                       kbdcfg.post_apply_function},
    { "us", "colemak" , "Colemak",           kbdcfg.post_apply_function},
    { "us", "colemak" , "Hebrew (Colemak)",  kbdcfg.post_apply_function .. kbdcfg.ivrit},
    { "de", "", "Deutsch", "", ""}
 }
-kbdcfg.current = 2
+kbdcfg.current = 1
 kbdcfg.widget = wibox.widget.textbox()
 kbdcfg.widget:set_text(" " .. kbdcfg.keymap[kbdcfg.current][3] .. " ")
 kbdcfg.switch = function (increment)
@@ -243,7 +243,7 @@ emacsd.widget = awful.widget.launcher({ image = "/usr/share/icons/hicolor/16x16/
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
---MyChagnes Logic
+--MyChanges Logic
 -- http://stackoverflow.com/questions/11117440/is-it-possible-to-emulate-bind-in-lua
 function bind(f,...)
    local args={...}
@@ -410,13 +410,15 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
 
-    awful.key({ modkey,           }, "e", --MyChagnes Colemak
+--    awful.key({ modkey,           }, "e", --MyChanges Colemak
+    awful.key({ modkey,           }, "k", --MyChanges
         function ()
             awful.client.focus.byidx( 1)
         end,
         {description = "focus next by index", group = "client"}
     ),
-    awful.key({ modkey,           }, "u", --MyChagnes Colemak
+--    awful.key({ modkey,           }, "u", --MyChanges Colemak
+    awful.key({ modkey,           }, "i", --MyChanges
         function ()
             awful.client.focus.byidx(-1)
         end,
@@ -426,15 +428,20 @@ globalkeys = awful.util.table.join(
               {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
-    awful.key({ modkey, "Shift"   }, "e", function () awful.client.swap.byidx(  1)    end, --MyChagnes Colemak
+--    awful.key({ modkey, "Shift"   }, "e", function () awful.client.swap.byidx(  1)    end, --MyChanges Colemak
+    awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx(  1)    end, --MyChanges
               {description = "swap with next client by index", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "u", function () awful.client.swap.byidx( -1)    end, --MyChagnes Colemak
+--    awful.key({ modkey, "Shift"   }, "u", function () awful.client.swap.byidx( -1)    end, --MyChanges Colemak
+    awful.key({ modkey, "Shift"   }, "i", function () awful.client.swap.byidx( -1)    end, --MyChanges
               {description = "swap with previous client by index", group = "client"}),
-    awful.key({ modkey, "Control" }, "e", function () awful.screen.focus_relative( 1) end, --MyChagnes Colemak
+--    awful.key({ modkey, "Control" }, "e", function () awful.screen.focus_relative( 1) end, --MyChanges Colemak
+    awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative( 1) end, --MyChanges
               {description = "focus the next screen", group = "screen"}),
-    awful.key({ modkey, "Control" }, "u", function () awful.screen.focus_relative(-1) end, --MyChagnes Colemak
+--    awful.key({ modkey, "Control" }, "u", function () awful.screen.focus_relative(-1) end, --MyChanges Colemak
+    awful.key({ modkey, "Control" }, "i", function () awful.screen.focus_relative(-1) end, --MyChanges
               {description = "focus the previous screen", group = "screen"}),
-    awful.key({ modkey,           }, "l", awful.client.urgent.jumpto, --MyChagnes Colemak
+--    awful.key({ modkey,           }, "l", awful.client.urgent.jumpto, --MyChanges Colemak
+    awful.key({ modkey,           }, "u", awful.client.urgent.jumpto, --MyChanges
               {description = "jump to urgent client", group = "client"}),
     awful.key({ modkey,           }, "Tab",
         function ()
@@ -453,24 +460,30 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
 
-    awful.key({ modkey,           }, "i",     function () awful.tag.incmwfact( 0.05)          end, --MyChagnes Colemak
+--    awful.key({ modkey,           }, "i",     function () awful.tag.incmwfact( 0.05)          end, --MyChanges Colemak
+    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end, --MyChanges
               {description = "increase master width factor", group = "layout"}),
-    awful.key({ modkey,           }, "n",     function () awful.tag.incmwfact(-0.05)          end, --MyChagnes Colemak
+--    awful.key({ modkey,           }, "n",     function () awful.tag.incmwfact(-0.05)          end, --MyChanges Colemak
+    awful.key({ modkey,           }, "j",     function () awful.tag.incmwfact(-0.05)          end, --MyChanges
               {description = "decrease master width factor", group = "layout"}),
-    awful.key({ modkey, "Shift"   }, "n",     function () awful.tag.incnmaster( 1, nil, true) end, --MyChagnes Colemak
+--    awful.key({ modkey, "Shift"   }, "n",     function () awful.tag.incnmaster( 1, nil, true) end, --MyChanges Colemak
+    awful.key({ modkey, "Shift"   }, "j",     function () awful.tag.incnmaster( 1, nil, true) end, --MyChanges
               {description = "increase the number of master clients", group = "layout"}),
-    awful.key({ modkey, "Shift"   }, "i",     function () awful.tag.incnmaster(-1, nil, true) end, --MyChagnes Colemak
+--    awful.key({ modkey, "Shift"   }, "i",     function () awful.tag.incnmaster(-1, nil, true) end, --MyChanges Colemak
+    awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1, nil, true) end, --MyChanges
               {description = "decrease the number of master clients", group = "layout"}),
-    awful.key({ modkey, "Control" }, "n",     function () awful.tag.incncol( 1, nil, true)    end, --MyChagnes Colemak
+--    awful.key({ modkey, "Control" }, "n",     function () awful.tag.incncol( 1, nil, true)    end, --MyChanges Colemak
+    awful.key({ modkey, "Control" }, "j",     function () awful.tag.incncol( 1, nil, true)    end, --MyChanges
               {description = "increase the number of columns", group = "layout"}),
-    awful.key({ modkey, "Control" }, "i",     function () awful.tag.incncol(-1, nil, true)    end, --MyChagnes Colemak
+--    awful.key({ modkey, "Control" }, "i",     function () awful.tag.incncol(-1, nil, true)    end, --MyChanges Colemak
+    awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1, nil, true)    end, --MyChanges
               {description = "decrease the number of columns", group = "layout"}),
     awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
               {description = "select next", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
 
-    awful.key({ modkey, "Control" }, "b", --MyChagnes Colemak
+    awful.key({ modkey, "Control" }, "b", --MyChanges
               function ()
                   local c = awful.client.restore()
                   -- Focus restored client
@@ -499,8 +512,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "p", function() menubar.show() end,
        {description = "show the menubar", group = "launcher"}),
 
-    --MyChagnes Custom Stuff
-    --MyChagnes (Multimedia Keys)
+    --MyChanges Custom Stuff
+    --MyChanges (Multimedia Keys)
     awful.key({ }, "XF86AudioRaiseVolume",     function () awful.util.spawn_with_shell("~/Applications/Scripts/pa_change_stream_volume.sh 5 +") end, {description = "Raise Volume", group = "Sound Control"}),
     awful.key({ }, "XF86AudioLowerVolume",     function () awful.util.spawn_with_shell("~/Applications/Scripts/pa_change_stream_volume.sh 5 -") end, {description = "Lower Volume", group = "Sound Control"}),
     awful.key({ }, "XF86AudioMute",            function () awful.util.spawn_with_shell("amixer -D pulse set Master Playback Switch toggle") end, {description = "Mute Sound", group = "Sound Control"}),
@@ -508,14 +521,14 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,         }, "XF86AudioPlay",     function () awful.util.spawn_with_shell("pactl set-default-sink webstream_sink") end, {description = "Set default soundcard output to game recording.", group = "Sound Control"}),
     awful.key({ modkey, "Shift" }, "XF86AudioPlay",     function () awful.util.spawn_with_shell("pactl set-default-sink combined") end, {description = "Set default soundcard output to default.", group = "Sound Control"}),
     
-    --MyChagnes (Special Keys)
+    --MyChanges (Special Keys)
     awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'") end, {description = "Make Screenshot", group = "Utility"}),
     awful.key({ modkey, }, "Print", function () awful.util.spawn("scrot -u -e 'mv $f ~/screenshots/ 2>/dev/null'") end, {description = "Make Screenshot of current window", group = "Utility"}),
     awful.key({ }, "XF86MonBrightnessUp",     function () awful.util.spawn_with_shell("xbacklight -inc 10")    end, {description = "Increase Background Light", group = "Utility"}),
     awful.key({ }, "XF86MonBrightnessDown",   function () awful.util.spawn_with_shell("xbacklight -dec 10")    end, {description = "Decrease Background Light", group = "Utility"}),
-    awful.key({ modkey, "Control" }, "l",     function () awful.util.spawn_with_shell("xscreensaver-command -lock")    end, {description = "Lock system", group = "Utility"}),
+    awful.key({ modkey, "Control", "Shift" }, "l",     function () awful.util.spawn_with_shell("xscreensaver-command -lock")    end, {description = "Lock system", group = "Utility"}),
 
-    --MyChagnes (Keycombos)
+    --MyChanges (Keycombos)
     awful.key({ modkey,           }, ".",     function () kbdcfg.switch(1)  end, {description = "Next Keyboard Layout", group = "Utility"}),
     awful.key({ modkey, "Shift"   }, ".",     function () kbdcfg.switch(-1) end, {description = "Previous Keyboard Layout", group = "Utility"})
 )
@@ -534,12 +547,12 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
     awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
-              {description = "move to next screen", group = "client"}), --MyChagnes (Description)
-    awful.key({ modkey, "Shift"   }, "o",      function(c) c:move_to_screen(c.screen.index-1)end,  --MyChangse
-              {description = "move to other screen", group = "client"}), --MyChagnes (Description)
+              {description = "move to next screen", group = "client"}), --MyChanges (Description)
+    awful.key({ modkey, "Shift"   }, "o",      function(c) c:move_to_screen(c.screen.index-1)end,  --MyChanges
+              {description = "move to other screen", group = "client"}), --MyChanges (Description)
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
-    awful.key({ modkey,           }, "b",  --MyChagnes Colemak
+    awful.key({ modkey,           }, "b",  --MyChanges
         function (c)
             -- The client currently has the input focus, so it cannot be
             -- minimized, since minimized clients can't have the focus.
@@ -662,7 +675,9 @@ awful.rules.rules = {
 
         name = {
            "Event Tester",  -- xev.
-           "Ediff"
+           "Ediff",
+           "urn",
+           "xsensors"
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.
@@ -672,7 +687,7 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, callback = bind(myTitlebarToggleFunction, false) --MyChagnes (no longer a property)
+      }, callback = bind(myTitlebarToggleFunction, false) --MyChanges (no longer a property)
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
