@@ -185,6 +185,28 @@ Currently not sure what this does.
     (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING)))
 #+END_SRC
 
+*** Evil                                                            :improve:
+#+BEGIN_SRC emacs-lisp :tangle yes
+  ;; https://www.reddit.com/r/emacs/comments/726p7i/evil_mode_and_use_package/dnh3338/
+  (use-package evil
+    :ensure t ;; install the evil package if not installed
+    :init ;; tweak evil's configuration before loading it
+    (setq evil-search-module 'evil-search)
+    (setq evil-ex-complete-emacs-commands nil)
+    (setq evil-vsplit-window-right t)
+    (setq evil-split-window-below t)
+    (setq evil-shift-round nil)
+    (setq evil-want-C-u-scroll t)
+    :config ;; tweak evil after loading it
+    (evil-mode)
+  
+    ;; example how to map a command in normal mode (called 'normal state' in evil)
+    ;; (define-key evil-normal-state-map (kbd ", w") 'evil-window-vsplit)
+    )
+
+#+END_SRC
+
+
 ** Visual Stuff
 *** Mode line format
 Display a more compact mode line.
@@ -242,17 +264,16 @@ I use [[https://ogbe.net/emacsconfig.html][Dennis' Emacs configuration theme]] f
 #+BEGIN_SRC emacs-lisp :tangle yes
   (defun dennis-set-cursor ()
     "Manages the cursor boldness in read only texts as well as the color."
-    ;; (set-cursor-color "gold") ;; set cursor color to gold (dark)
     (set-cursor-color "#75B000") ;; set cursor color to green-ish color (bright)
     (set-face-attribute 'region nil :background "orange" :foreground "black")
     (if (display-graphic-p)
         (progn
           ;; dark theme
-          (set-face-attribute 'helm-selection nil :background "gray30")
-          (set-face-background 'hl-line "gray30")
+          ;;(set-face-attribute 'helm-selection nil :background "gray30")
+          ;;(set-face-background 'hl-line "gray30")
           ;; bright theme
-          ;;(set-face-attribute 'helm-selection nil :background "gray80")
-          ;;(set-face-background 'hl-line "gray80")
+          (set-face-attribute 'helm-selection nil :background "gray80")
+          (set-face-background 'hl-line "gray80")
           )
       (progn
         (set-face-attribute 'helm-selection nil :background "color-235")
@@ -349,64 +370,64 @@ Therefore we run a function after the application of the theme to apply my patch
 
 All in all it looks like this:
 #+BEGIN_SRC emacs-lisp :tangle yes
-    ;;(defvar my:theme 'sanityinc-tomorrow-day) ;; gui bright
-    (defvar my:theme 'wombat) ;; gui dark
-    ;;(defvar my:theme-terminal 'tango)
-    (defvar my:theme-window-loaded nil)
-    (defvar my:theme-terminal-loaded nil)
+  (defvar my:theme 'sanityinc-tomorrow-day) ;; gui bright
+  ;;(defvar my:theme 'wombat) ;; gui dark
+  ;;(defvar my:theme-terminal 'tango)
+  (defvar my:theme-window-loaded nil)
+  (defvar my:theme-terminal-loaded nil)
 
-    (defun my/setup-color-theme-fixes ()
-      (interactive)
-      (if (display-graphic-p)
-          (progn
-            ;; make program source code readable again (on white background)
-            (set-face-attribute 'font-lock-function-name-face nil :foreground "#f5871f" :weight 'bold)
-            (set-face-attribute 'font-lock-variable-name-face nil :foreground "DarkGoldenrod3" :weight 'bold)
-            ;; make outline/orgmode color readable again (on white background)
-            (set-face-attribute 'outline-4 nil :foreground "magenta")
-            ;; bar seperating line numbers and text
-            (set-face-attribute 'fringe nil :background "DimGrey") ;; "#F0F0F0"
-            ;; org-mode agenda tasks that start today should not be green (like finished tasks)
-            (set-face-attribute 'org-scheduled-today nil :foreground "black" :weight 'semi-bold)
-            (set-face-attribute 'org-scheduled nil :foreground "black")
-            ;; call font settings
-            (my/setup-font-for-theme))
-        ))
+  (defun my/setup-color-theme-fixes ()
+    (interactive)
+    (if (display-graphic-p)
+        (progn
+          ;; make program source code readable again (on white background)
+          (set-face-attribute 'font-lock-function-name-face nil :foreground "#f5871f" :weight 'bold)
+          (set-face-attribute 'font-lock-variable-name-face nil :foreground "DarkGoldenrod3" :weight 'bold)
+          ;; make outline/orgmode color readable again (on white background)
+          (set-face-attribute 'outline-4 nil :foreground "magenta")
+          ;; bar seperating line numbers and text
+          (set-face-attribute 'fringe nil :background "DimGrey") ;; "#F0F0F0"
+          ;; org-mode agenda tasks that start today should not be green (like finished tasks)
+          (set-face-attribute 'org-scheduled-today nil :foreground "black" :weight 'semi-bold)
+          (set-face-attribute 'org-scheduled nil :foreground "black")
+          ;; call font settings
+          (my/setup-font-for-theme))
+      ))
 
-    (if (daemonp)
-        (add-hook 'after-make-frame-functions
-                  (lambda (frame)
-                    (select-frame frame)
-                    (if (window-system frame)
-                        ;; GUI theme
-                        (progn
-                          (if my:theme-window-loaded
-                              (enable-theme my:theme)
-                            (load-theme my:theme t))
-                          (setq my:theme-window-loaded t)
-                          ;; fixes theme
-                          (my/setup-color-theme-fixes)
-                          (blink-cursor-mode 1)
-                          (dennis-set-cursor)
-                          (my/powerline-theme))
-                      ;; terminal theme
-                      ;;(if my:theme-terminal-loaded
-                      ;;    (enable-theme my:theme-terminal)
-                      ;;  (load-theme my:theme-terminal))
-                      (setq my:theme-terminal-loaded t)
-                      ;; fixes theme
-                      (my/setup-color-theme-fixes)
-                      (my/powerline-theme))))
+  (if (daemonp)
+      (add-hook 'after-make-frame-functions
+                (lambda (frame)
+                  (select-frame frame)
+                  (if (window-system frame)
+                      ;; GUI theme
+                      (progn
+                        (if my:theme-window-loaded
+                            (enable-theme my:theme)
+                          (load-theme my:theme t))
+                        (setq my:theme-window-loaded t)
+                        ;; fixes theme
+                        (my/setup-color-theme-fixes)
+                        (blink-cursor-mode 1)
+                        (dennis-set-cursor)
+                        (my/powerline-theme))
+                    ;; terminal theme
+                    ;;(if my:theme-terminal-loaded
+                    ;;    (enable-theme my:theme-terminal)
+                    ;;  (load-theme my:theme-terminal))
+                    (setq my:theme-terminal-loaded t)
+                    ;; fixes theme
+                    (my/setup-color-theme-fixes)
+                    (my/powerline-theme))))
 
-      (if (display-graphic-p)
-          (when (boundp 'my:theme)
-            (setq my:theme-window-loaded t)
-            (load-theme my:theme t)
-            (my/setup-color-theme-fixes))
-        (when (boundp 'my:theme-terminal)
-          (setq my:theme-terminal-loaded t)
-          (load-theme my:theme-terminal t)
-          (my/setup-color-theme-fixes))))
+    (if (display-graphic-p)
+        (when (boundp 'my:theme)
+          (setq my:theme-window-loaded t)
+          (load-theme my:theme t)
+          (my/setup-color-theme-fixes))
+      (when (boundp 'my:theme-terminal)
+        (setq my:theme-terminal-loaded t)
+        (load-theme my:theme-terminal t)
+        (my/setup-color-theme-fixes))))
 #+END_SRC
 
 *** Line numbering
