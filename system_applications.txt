@@ -181,7 +181,7 @@ modem-manager-gui
 arandr (easier xrandr)
 
 AUR:
-aurman
+yay
 multiload-ng(-systray-gtk3)
 (qpdfview) (we already got okular)
 cloudstation / cloudstationdrive / synology-cloud-station-drive (jenachdem welches gerade in der aur ist.)
