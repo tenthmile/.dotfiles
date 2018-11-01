@@ -234,8 +234,11 @@ This minor mode also modifies commands like =C-a=.
 
 *** Cursor
 First we make the cursor small and not blocky.
+And define the color I want to use.
 #+BEGIN_SRC emacs-lisp :tangle yes
-  (set-default 'cursor-type 'bar)
+  ;;(set-default 'cursor-type 'bar)
+
+  (defvar my/cursor-color "#75B000") ;; bright and dark
 #+END_SRC
 
 Then we make the cursor blink in a variable manner (longer on then off).
@@ -264,7 +267,7 @@ I use [[https://ogbe.net/emacsconfig.html][Dennis' Emacs configuration theme]] f
 #+BEGIN_SRC emacs-lisp :tangle yes
   (defun dennis-set-cursor ()
     "Manages the cursor boldness in read only texts as well as the color."
-    (set-cursor-color "#75B000") ;; set cursor color to green-ish color (bright)
+    (set-cursor-color my/cursor-color) ;; set cursor color to green-ish color (bright)
     (set-face-attribute 'region nil :background "orange" :foreground "black")
     (if (display-graphic-p)
         (progn
@@ -288,12 +291,12 @@ I use [[https://ogbe.net/emacsconfig.html][Dennis' Emacs configuration theme]] f
     ;; red cursor for overwrite mode
     (when overwrite-mode
       (set-cursor-color "red")))
-  (dennis-set-cursor)
+  ;;(dennis-set-cursor)
 #+END_SRC
 
 This needs to run after every command, since some modes screw with the cursor.
 #+BEGIN_SRC emacs-lisp :tangle yes
-  (add-hook 'post-command-hook 'dennis-set-cursor)
+  ;;(add-hook 'post-command-hook 'dennis-set-cursor)
 #+END_SRC
 
 *** Theme
@@ -408,7 +411,7 @@ All in all it looks like this:
                         ;; fixes theme
                         (my/setup-color-theme-fixes)
                         (blink-cursor-mode 1)
-                        (dennis-set-cursor)
+                        ;;(dennis-set-cursor)
                         (my/powerline-theme))
                     ;; terminal theme
                     ;;(if my:theme-terminal-loaded
