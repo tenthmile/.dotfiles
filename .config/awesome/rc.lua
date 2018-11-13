@@ -163,7 +163,8 @@ end
 kbdcfg.keymap = {
    { "us", "altgr-intl", "USA",                       kbdcfg.post_apply_function},
    { "us", "colemak" , "Colemak",           kbdcfg.post_apply_function},
-   { "us", "colemak" , "Hebrew (Colemak)",  kbdcfg.post_apply_function .. kbdcfg.ivrit},
+   --{ "us", "colemak" , "Hebrew (Colemak)",  kbdcfg.post_apply_function .. kbdcfg.ivrit},
+   { "il", "" , "Hebrew",  ""},
    { "de", "", "Deutsch", "", ""}
 }
 kbdcfg.current = 1
@@ -178,7 +179,7 @@ kbdcfg.switch = function (increment)
   
   local t = kbdcfg.keymap[kbdcfg.current]
   kbdcfg.widget:set_text(" " .. t[3] .. " ")
-  os.execute( kbdcfg.cmd .. " " .. t[1] .. " " .. t[2] .. ";setxkbmap -option ctrl:nocaps" .. t[4] )
+  os.execute( kbdcfg.cmd .. " " .. t[1] .. " " .. t[2] .. ";setxkbmap -option caps:escape" .. t[4] )
 end
 
 kbdcfg.widget:buttons(
@@ -524,8 +525,8 @@ globalkeys = awful.util.table.join(
     --MyChanges (Special Keys)
     awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'") end, {description = "Make Screenshot", group = "Utility"}),
     awful.key({ modkey, }, "Print", function () awful.util.spawn("scrot -u -e 'mv $f ~/screenshots/ 2>/dev/null'") end, {description = "Make Screenshot of current window", group = "Utility"}),
-    awful.key({ }, "XF86MonBrightnessUp",     function () awful.util.spawn_with_shell("xbacklight -inc 10")    end, {description = "Increase Background Light", group = "Utility"}),
-    awful.key({ }, "XF86MonBrightnessDown",   function () awful.util.spawn_with_shell("xbacklight -dec 10")    end, {description = "Decrease Background Light", group = "Utility"}),
+    awful.key({ }, "XF86MonBrightnessUp",     function () awful.util.spawn_with_shell("light -A 5")    end, {description = "Increase Background Light", group = "Utility"}),
+    awful.key({ }, "XF86MonBrightnessDown",   function () awful.util.spawn_with_shell("light -U 5")    end, {description = "Decrease Background Light", group = "Utility"}),
     awful.key({ modkey, "Control", "Shift" }, "l",     function () awful.util.spawn_with_shell("xscreensaver-command -lock")    end, {description = "Lock system", group = "Utility"}),
 
     --MyChanges (Keycombos)

@@ -1599,7 +1599,7 @@ So I need a rewrite.
   (defun hexcrypt (textstart textend keyText)
     "XOR Crypt"
     (interactive "*r\nsEnter the key: ")
-    (mapcar 'insert-string
+    (mapcar 'insert
             (let ( (text (string-to-list (buffer-substring-no-properties textstart textend)))
                    (key (string-to-list keyText)))
               (delete-region textstart textend)

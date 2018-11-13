@@ -195,6 +195,7 @@ chromium-widevine (damit man mit chromium Amazon Prime Video/Amazon Instant Vide
 awesome-freedesktop-git
 alarm-clock-applet
 nct6775-dkms-git # temperaturanzeige auf x370 board
+light-git        # backlight auf laptop, falls xbacklight nicht geht
 
 libretro-mame-git (mame)
 
