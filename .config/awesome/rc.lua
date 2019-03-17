@@ -123,7 +123,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 			     { "Emacs", editor, "/usr/share/icons/hicolor/48x48/apps/emacs.png" },
 			     { "Firefox", "firefox", "/usr/share/icons/hicolor/48x48/apps/firefox.png" },
 			     { "Thunderbird", "thunderbird", "/usr/share/icons/hicolor/48x48/apps/thunderbird.png" },
-                             { "WhatsApp", "whatsapp-web-desktop", "/opt/whatsapp-web/resources/app/icon.png" },
+                             { "WhatsApp", "whatsapp-nativefier", "/opt/whatsapp-web/resources/app/icon.png" },
                              { "Signal", "signal-desktop", "/usr/share/icons/hicolor/48x48/apps/signal-desktop.png" },
 			     { "Teamspeak", "teamspeak3", "/usr/share/icons/hicolor/48x48/devices/blueman-headset.png" },
                              { "Music Player", "quodlibet", "/usr/share/icons/hicolor/48x48/apps/quodlibet.png"},
@@ -162,7 +162,7 @@ end
 -- {keymap, variante, GUI-Name, POST-Settings},
 kbdcfg.keymap = {
    { "us", "altgr-intl", "USA",                       kbdcfg.post_apply_function},
-   { "us", "colemak" , "Colemak",           kbdcfg.post_apply_function},
+   --{ "us", "colemak" , "Colemak",           kbdcfg.post_apply_function},
    --{ "us", "colemak" , "Hebrew (Colemak)",  kbdcfg.post_apply_function .. kbdcfg.ivrit},
    { "il", "" , "Hebrew",  ""},
    { "de", "", "Deutsch", "", ""}
@@ -519,15 +519,15 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86AudioLowerVolume",     function () awful.util.spawn_with_shell("~/Applications/Scripts/pa_change_stream_volume.sh 5 -") end, {description = "Lower Volume", group = "Sound Control"}),
     awful.key({ }, "XF86AudioMute",            function () awful.util.spawn_with_shell("amixer -D pulse set Master Playback Switch toggle") end, {description = "Mute Sound", group = "Sound Control"}),
     awful.key({ }, "XF86Tools",                function () awful.util.spawn_with_shell("~/Applications/Scripts/runOnce.sh quodlibet") end, {description = "Start Mediaplayer", group = "Sound Control"}),
-    awful.key({ modkey,         }, "XF86AudioPlay",     function () awful.util.spawn_with_shell("pactl set-default-sink webstream_sink") end, {description = "Set default soundcard output to game recording.", group = "Sound Control"}),
-    awful.key({ modkey, "Shift" }, "XF86AudioPlay",     function () awful.util.spawn_with_shell("pactl set-default-sink combined") end, {description = "Set default soundcard output to default.", group = "Sound Control"}),
+    awful.key({ modkey, "Shift" }, "h",     function () awful.util.spawn_with_shell("~/Applications/Scripts/changeAudioDevice.sh -headphones") end, {description = "Set default soundcard output to headphones", group = "Sound Control"}),
+    awful.key({ modkey, "Shift" }, "s",     function () awful.util.spawn_with_shell("~/Applications/Scripts/changeAudioDevice.sh -speaker") end, {description = "Set default soundcard output to speakers", group = "Sound Control"}),
     
     --MyChanges (Special Keys)
     awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'") end, {description = "Make Screenshot", group = "Utility"}),
     awful.key({ modkey, }, "Print", function () awful.util.spawn("scrot -u -e 'mv $f ~/screenshots/ 2>/dev/null'") end, {description = "Make Screenshot of current window", group = "Utility"}),
     awful.key({ }, "XF86MonBrightnessUp",     function () awful.util.spawn_with_shell("light -A 5")    end, {description = "Increase Background Light", group = "Utility"}),
     awful.key({ }, "XF86MonBrightnessDown",   function () awful.util.spawn_with_shell("light -U 5")    end, {description = "Decrease Background Light", group = "Utility"}),
-    awful.key({ modkey, "Control", "Shift" }, "l",     function () awful.util.spawn_with_shell("xscreensaver-command -lock")    end, {description = "Lock system", group = "Utility"}),
+    awful.key({ modkey, "Control", "Shift" }, "l",     function () awful.util.spawn_with_shell("xscreensaver-command -lock || (sleep 1; xset dpms force off)")    end, {description = "Lock system", group = "Utility"}),
 
     --MyChanges (Keycombos)
     awful.key({ modkey,           }, ".",     function () kbdcfg.switch(1)  end, {description = "Next Keyboard Layout", group = "Utility"}),
